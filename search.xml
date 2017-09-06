@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<search>
+  <entry>
+    <title><![CDATA[解决端口占用问题]]></title>
+    <url>%2F2017%2F09%2F06%2F%E8%A7%A3%E5%86%B3%E7%AB%AF%E5%8F%A3%E5%8D%A0%E7%94%A8%E9%97%AE%E9%A2%98%2F</url>
+    <content type="text"><![CDATA[日常开发中经常会遇到端口占用的问题，以下简单记录下解决方案。 Windows 系统查看占用指定端口的程序 进程ID1netstat -ano|findstr &quot;8080&quot; 找到进程号对应的进程名称1tasklist|findstr 3112 可以使用进程管理杀死进程，也可以使用命令工具1taskkill /f /t /im /javaw.exe Linux 系统查看占用指定端口的程序 进程ID1netstat -apn|grep 8080 找到进程号对应的进程名称1ps -aux|grep 5566 1kill 5566]]></content>
+  </entry>
+  <entry>
+    <title><![CDATA[Hello World]]></title>
+    <url>%2F2017%2F09%2F06%2Fhello-world%2F</url>
+    <content type="text"><![CDATA[Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub. Quick StartCreate a new post1$ hexo new "My New Post" More info: Writing Run server1$ hexo server More info: Server Generate static files1$ hexo generate More info: Generating Deploy to remote sites1$ hexo deploy More info: Deployment]]></content>
+  </entry>
+</search>
