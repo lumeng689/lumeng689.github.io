@@ -1,6 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[MongoDB的导入导出]]></title>
+    <url>%2F2017%2F09%2F18%2FMongoDB%E7%9A%84%E5%AF%BC%E5%85%A5%E5%AF%BC%E5%87%BA%2F</url>
+    <content type="text"><![CDATA[MongoDB的导入导出分为 文本导出 和 二进制导出，文本导出一次导出一个集合，方便与其他数据库交换数据，二进制导出的是MongoDB自己的格式，可以导出整个数据库，体积小，速度快。 文本导出mongoexport 导出表12345678910-h, --host=&lt;hostname&gt; 主机 --port=&lt;port&gt; 端口-u, --username=&lt;username&gt; 用户名-p, --password=&lt;passwd&gt; 密码-d, --db=&lt;database-name&gt; 数据库名称-c, --collection=&lt;collection-name&gt; 集合名称-f, --fields=&lt;field&gt;[,&lt;field&gt;]* 逗号分隔的字段名称 --type=&lt;type&gt; json或者csv，默认json--type=&lt;type&gt;-o, --out=&lt;filename&gt; 导出文件名称 举例： 导出adminusers集合1mongoexport -h localhost -d cloudminds -c adminusers -o ./adminusers.json mongoimport 导入数据12345678910-h, --host=&lt;hostname&gt; 主机 --port=&lt;port&gt; 端口-u, --username=&lt;username&gt; 用户名-p, --password=&lt;passwd&gt; 密码-d, --db=&lt;database-name&gt; 数据库名称-c, --collection=&lt;collection-name&gt; 集合名称-f, --fields=&lt;field&gt;[,&lt;field&gt;]* 逗号分隔的字段名称 --type=&lt;type&gt; json或者csv，默认json --out=&lt;filename&gt; 要导入的文件名称--type=&lt;type&gt; 举例1mongoimport -h localhost -d cloudminds -c adminusers --file ./adminusers.json 二进制导出mongodump 导出二进制bson结构的数据及其索引信息12345678-h, --host=&lt;hostname&gt; 主机 --port=&lt;port&gt; 端口-u, --username=&lt;username&gt; 用户名-p, --password=&lt;passwd&gt; 密码-d, --db=&lt;database-name&gt; 数据库名称-c, --collection=&lt;collection-name&gt; 集合名称 --type=&lt;type&gt;-o, --out=&lt;filename&gt; 导出文件名称 导出cloudminds数据库中的数据到文件 bak中 1mongodump -d cloudminds -o bak mongorestore 导入二进制文件123```导入备份文件bak中的数据 mongorestore –drop bak```]]></content>
+  </entry>
+  <entry>
     <title><![CDATA[PM2 随系统启动配置]]></title>
     <url>%2F2017%2F09%2F06%2FPM2-%E9%9A%8F%E7%B3%BB%E7%BB%9F%E5%90%AF%E5%8A%A8%E9%85%8D%E7%BD%AE%2F</url>
     <content type="text"><![CDATA[自动配置启动脚本 1pm2 startup 保存当前的进程信息（已启动的服务） 1pm2 save 手动的测试下保存是否有效 1pm2 resurrect 如果要取消，启动 1pm2 unstartup]]></content>
