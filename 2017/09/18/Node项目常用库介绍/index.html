@@ -3,16 +3,20 @@
 <head>
     <meta charset="utf-8">
     
-    <title>Categories | Lim&#39;s 博客</title>
+    <title>Node项目常用库介绍 | Lim&#39;s 博客</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
-    <meta property="og:type" content="website">
-<meta property="og:title" content="Categories">
-<meta property="og:url" content="http://yoursite.com/categories/index.html">
+    <meta name="description" content="nodemon  concurrently同时运行几个任务的工具，类似于 npm run watch-js &amp;amp; npm run watch-less配合参数 –kill-others 使用，代表一个任务失败的话其他任务也会被kill掉  PM2  tsc, tslint">
+<meta name="keywords" content="Node">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Node项目常用库介绍">
+<meta property="og:url" content="http://yoursite.com/2017/09/18/Node项目常用库介绍/index.html">
 <meta property="og:site_name" content="Lim&#39;s 博客">
+<meta property="og:description" content="nodemon  concurrently同时运行几个任务的工具，类似于 npm run watch-js &amp;amp; npm run watch-less配合参数 –kill-others 使用，代表一个任务失败的话其他任务也会被kill掉  PM2  tsc, tslint">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2017-08-31T04:13:03.000Z">
+<meta property="og:updated_time" content="2017-09-18T06:26:37.087Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Categories">
+<meta name="twitter:title" content="Node项目常用库介绍">
+<meta name="twitter:description" content="nodemon  concurrently同时运行几个任务的工具，类似于 npm run watch-js &amp;amp; npm run watch-less配合参数 –kill-others 使用，代表一个任务失败的话其他任务也会被kill掉  PM2  tsc, tslint">
     
 
     
@@ -207,14 +211,165 @@
 </aside>
 
             
-            <section id="main"><section class="layout-wrap">
-    <div class="layout-title">
-        <span>Categories</span>
-    </div>
-    <div class="layout-wrap-inner list-categories">
+            <section id="main"><article id="post-Node项目常用库介绍" class="article article-type-post" itemscope itemprop="blogPost">
+    <div class="article-inner">
         
+        
+            <header class="article-header">
+                
+    
+        <h1 class="article-title" itemprop="name">
+            Node项目常用库介绍
+        </h1>
+    
+
+                
+                    <div class="article-meta">
+                        
+    <div class="article-date">
+        <i class="fa fa-calendar"></i>
+        <a href="/2017/09/18/Node项目常用库介绍/">
+            <time datetime="2017-09-18T06:25:57.000Z" itemprop="datePublished">2017-09-18</time>
+        </a>
     </div>
-</section></section>
+
+
+                        
+                        
+    <div class="article-tag">
+        <i class="fa fa-tag"></i>
+        <a class="tag-link" href="/tags/Node/">Node</a>
+    </div>
+
+                    </div>
+                
+            </header>
+        
+        
+        <div class="article-entry" itemprop="articleBody">
+        
+            
+            <ol>
+<li><p>nodemon</p>
+</li>
+<li><p>concurrently<br>同时运行几个任务的工具，类似于 npm run watch-js &amp; npm run watch-less<br>配合参数 –kill-others 使用，代表一个任务失败的话其他任务也会被kill掉</p>
+</li>
+<li><p>PM2</p>
+</li>
+<li><p>tsc, tslint</p>
+</li>
+</ol>
+
+        
+        </div>
+        <footer class="article-footer">
+            <div class="share-container">
+
+
+
+</div>
+
+    <a data-url="http://yoursite.com/2017/09/18/Node项目常用库介绍/" data-id="cj7psthel0008bsj667ehzfq5" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
+<script>
+    (function ($) {
+        // Prevent duplicate binding
+        if (typeof(__SHARE_BUTTON_BINDED__) === 'undefined' || !__SHARE_BUTTON_BINDED__) {
+            __SHARE_BUTTON_BINDED__ = true;
+        } else {
+            return;
+        }
+        $('body').on('click', function() {
+            $('.article-share-box.on').removeClass('on');
+        }).on('click', '.article-share-link', function(e) {
+            e.stopPropagation();
+
+            var $this = $(this),
+                url = $this.attr('data-url'),
+                encodedUrl = encodeURIComponent(url),
+                id = 'article-share-box-' + $this.attr('data-id'),
+                offset = $this.offset(),
+                box;
+
+            if ($('#' + id).length) {
+                box = $('#' + id);
+
+                if (box.hasClass('on')){
+                    box.removeClass('on');
+                    return;
+                }
+            } else {
+                var html = [
+                    '<div id="' + id + '" class="article-share-box">',
+                        '<input class="article-share-input" value="' + url + '">',
+                        '<div class="article-share-links">',
+                            '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="fa fa-twitter article-share-twitter" target="_blank" title="Twitter"></a>',
+                            '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="fa fa-facebook article-share-facebook" target="_blank" title="Facebook"></a>',
+                            '<a href="http://pinterest.com/pin/create/button/?url=' + encodedUrl + '" class="fa fa-pinterest article-share-pinterest" target="_blank" title="Pinterest"></a>',
+                            '<a href="https://plus.google.com/share?url=' + encodedUrl + '" class="fa fa-google article-share-google" target="_blank" title="Google+"></a>',
+                        '</div>',
+                    '</div>'
+                ].join('');
+
+              box = $(html);
+
+              $('body').append(box);
+            }
+
+            $('.article-share-box.on').hide();
+
+            box.css({
+                top: offset.top + 25,
+                left: offset.left
+            }).addClass('on');
+
+        }).on('click', '.article-share-box', function (e) {
+            e.stopPropagation();
+        }).on('click', '.article-share-box-input', function () {
+            $(this).select();
+        }).on('click', '.article-share-box-link', function (e) {
+            e.preventDefault();
+            e.stopPropagation();
+
+            window.open(this.href, 'article-share-box-window-' + Date.now(), 'width=500,height=450');
+        });
+    })(jQuery);
+</script>
+
+            
+    
+
+        </footer>
+    </div>
+    
+        
+<nav id="article-nav">
+    
+        <a href="/2017/09/18/npm常用命令介绍/" id="article-nav-newer" class="article-nav-link-wrap">
+            <strong class="article-nav-caption">上一篇</strong>
+            <div class="article-nav-title">
+                
+                    常用命令介绍
+                
+            </div>
+        </a>
+    
+    
+        <a href="/2017/09/18/node-sass安装不成功解决办法/" id="article-nav-older" class="article-nav-link-wrap">
+            <strong class="article-nav-caption">下一篇</strong>
+            <div class="article-nav-title">node-sass安装不成功解决办法</div>
+        </a>
+    
+</nav>
+
+
+    
+</article>
+
+
+    
+    
+
+</section>
             
                 
 <aside id="sidebar">

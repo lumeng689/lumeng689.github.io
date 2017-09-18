@@ -3,16 +3,19 @@
 <head>
     <meta charset="utf-8">
     
-    <title>Categories | Lim&#39;s 博客</title>
+    <title>Express项目安全建议 | Lim&#39;s 博客</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
-    <meta property="og:type" content="website">
-<meta property="og:title" content="Categories">
-<meta property="og:url" content="http://yoursite.com/categories/index.html">
+    <meta name="description" content="参照文档 http://expressjs.com/zh-cn/advanced/best-practice-security.html  使用 HelmetHelmet 通过适当地设置 HTTP 头，帮助您保护应用程序避免一些众所周知的 Web 漏洞。  csp 用于设置 Content-Security-Policy 头，帮助抵御跨站点脚本编制攻击和其他跨站点注入攻击。 hidePowered">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Express项目安全建议">
+<meta property="og:url" content="http://yoursite.com/2017/09/18/Express项目安全建议/index.html">
 <meta property="og:site_name" content="Lim&#39;s 博客">
+<meta property="og:description" content="参照文档 http://expressjs.com/zh-cn/advanced/best-practice-security.html  使用 HelmetHelmet 通过适当地设置 HTTP 头，帮助您保护应用程序避免一些众所周知的 Web 漏洞。  csp 用于设置 Content-Security-Policy 头，帮助抵御跨站点脚本编制攻击和其他跨站点注入攻击。 hidePowered">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2017-08-31T04:13:03.000Z">
+<meta property="og:updated_time" content="2017-09-18T06:33:32.835Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Categories">
+<meta name="twitter:title" content="Express项目安全建议">
+<meta name="twitter:description" content="参照文档 http://expressjs.com/zh-cn/advanced/best-practice-security.html  使用 HelmetHelmet 通过适当地设置 HTTP 头，帮助您保护应用程序避免一些众所周知的 Web 漏洞。  csp 用于设置 Content-Security-Policy 头，帮助抵御跨站点脚本编制攻击和其他跨站点注入攻击。 hidePowered">
     
 
     
@@ -207,14 +210,173 @@
 </aside>
 
             
-            <section id="main"><section class="layout-wrap">
-    <div class="layout-title">
-        <span>Categories</span>
-    </div>
-    <div class="layout-wrap-inner list-categories">
+            <section id="main"><article id="post-Express项目安全建议" class="article article-type-post" itemscope itemprop="blogPost">
+    <div class="article-inner">
         
+        
+            <header class="article-header">
+                
+    
+        <h1 class="article-title" itemprop="name">
+            Express项目安全建议
+        </h1>
+    
+
+                
+                    <div class="article-meta">
+                        
+    <div class="article-date">
+        <i class="fa fa-calendar"></i>
+        <a href="/2017/09/18/Express项目安全建议/">
+            <time datetime="2017-09-18T06:33:17.000Z" itemprop="datePublished">2017-09-18</time>
+        </a>
     </div>
-</section></section>
+
+
+                        
+                        
+                    </div>
+                
+            </header>
+        
+        
+        <div class="article-entry" itemprop="articleBody">
+        
+            
+            <p>参照文档 <a href="http://expressjs.com/zh-cn/advanced/best-practice-security.html" target="_blank" rel="external">http://expressjs.com/zh-cn/advanced/best-practice-security.html</a></p>
+<ol>
+<li><p>使用 Helmet<br>Helmet 通过适当地设置 HTTP 头，帮助您保护应用程序避免一些众所周知的 Web 漏洞。</p>
+<ul>
+<li>csp 用于设置 Content-Security-Policy 头，帮助抵御跨站点脚本编制攻击和其他跨站点注入攻击。</li>
+<li>hidePoweredBy 用于移除 X-Powered-By 头。</li>
+<li>hpkp 用于添加公用密钥固定头，防止以伪造证书进行的中间人攻击。</li>
+<li>hsts 用于设置 Strict-Transport-Security 头，实施安全的服务器连接 (HTTP over SSL/TLS)。</li>
+<li>ieNoOpen 用于为 IE8+ 设置 X-Download-Options。</li>
+<li>noCache 用于设置 Cache-Control 和 Pragma 头，以禁用客户端高速缓存。</li>
+<li>noSniff 用于设置 X-Content-Type-Options，以防止攻击者以 MIME 方式嗅探浏览器发出的响应中声明的 content-type。</li>
+<li>frameguard 用于设置 X-Frame-Options 头，提供 clickjacking 保护。</li>
+<li>xssFilter 用于设置 X-XSS-Protection，在最新的 Web 浏览器中启用跨站点脚本编制 (XSS) 过滤器。<br>安装：<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ npm install --save helmet</div></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+</ol>
+<p>使用：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">var helmet = require(&apos;helmet&apos;);</div><div class="line">app.use(helmet());</div></pre></td></tr></table></figure></p>
+<ol>
+<li><p>禁用 X-Powered-By 头<br>如果使用 helmet.js，它会为自动屏蔽改header，没有使用的话，可以使用下面的代码禁用。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">app.disable(&apos;x-powered-by&apos;);</div></pre></td></tr></table></figure>
+</li>
+<li><p>安全地使用 cookie<br>需要更改session的name ，默认是 ‘connect.sid’ ，修改为sessionId</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">var session = require(&apos;express-session&apos;);</div><div class="line">app.set(&apos;trust proxy&apos;, 1) // trust first proxy</div><div class="line">app.use( session(&#123;</div><div class="line">   secret : &apos;s3Cur3&apos;,</div><div class="line">   name : &apos;sessionId&apos;,</div><div class="line">  &#125;)</div><div class="line">);</div></pre></td></tr></table></figure>
+</li>
+<li><p>检查依赖包的安全性</p>
+</li>
+</ol>
+<p>有两个工具可选，功能类似： nsp 和 requireSafe</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">npm install -g nsp</div><div class="line">npm install -g requiresafe</div></pre></td></tr></table></figure>
+<p>使用nsp的话，命令为：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">nsp audit-package</div></pre></td></tr></table></figure></p>
+<p>使用requiresafe的话，命令为：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">requiresafe check</div></pre></td></tr></table></figure></p>
+
+        
+        </div>
+        <footer class="article-footer">
+            <div class="share-container">
+
+
+
+</div>
+
+    <a data-url="http://yoursite.com/2017/09/18/Express项目安全建议/" data-id="cj7psthds0000bsj60jh4upnv" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
+<script>
+    (function ($) {
+        // Prevent duplicate binding
+        if (typeof(__SHARE_BUTTON_BINDED__) === 'undefined' || !__SHARE_BUTTON_BINDED__) {
+            __SHARE_BUTTON_BINDED__ = true;
+        } else {
+            return;
+        }
+        $('body').on('click', function() {
+            $('.article-share-box.on').removeClass('on');
+        }).on('click', '.article-share-link', function(e) {
+            e.stopPropagation();
+
+            var $this = $(this),
+                url = $this.attr('data-url'),
+                encodedUrl = encodeURIComponent(url),
+                id = 'article-share-box-' + $this.attr('data-id'),
+                offset = $this.offset(),
+                box;
+
+            if ($('#' + id).length) {
+                box = $('#' + id);
+
+                if (box.hasClass('on')){
+                    box.removeClass('on');
+                    return;
+                }
+            } else {
+                var html = [
+                    '<div id="' + id + '" class="article-share-box">',
+                        '<input class="article-share-input" value="' + url + '">',
+                        '<div class="article-share-links">',
+                            '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="fa fa-twitter article-share-twitter" target="_blank" title="Twitter"></a>',
+                            '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="fa fa-facebook article-share-facebook" target="_blank" title="Facebook"></a>',
+                            '<a href="http://pinterest.com/pin/create/button/?url=' + encodedUrl + '" class="fa fa-pinterest article-share-pinterest" target="_blank" title="Pinterest"></a>',
+                            '<a href="https://plus.google.com/share?url=' + encodedUrl + '" class="fa fa-google article-share-google" target="_blank" title="Google+"></a>',
+                        '</div>',
+                    '</div>'
+                ].join('');
+
+              box = $(html);
+
+              $('body').append(box);
+            }
+
+            $('.article-share-box.on').hide();
+
+            box.css({
+                top: offset.top + 25,
+                left: offset.left
+            }).addClass('on');
+
+        }).on('click', '.article-share-box', function (e) {
+            e.stopPropagation();
+        }).on('click', '.article-share-box-input', function () {
+            $(this).select();
+        }).on('click', '.article-share-box-link', function (e) {
+            e.preventDefault();
+            e.stopPropagation();
+
+            window.open(this.href, 'article-share-box-window-' + Date.now(), 'width=500,height=450');
+        });
+    })(jQuery);
+</script>
+
+            
+    
+
+        </footer>
+    </div>
+    
+        
+<nav id="article-nav">
+    
+    
+        <a href="/2017/09/18/Node项目ubuntu环境搭建简介/" id="article-nav-older" class="article-nav-link-wrap">
+            <strong class="article-nav-caption">下一篇</strong>
+            <div class="article-nav-title">Node项目ubuntu环境搭建简介</div>
+        </a>
+    
+</nav>
+
+
+    
+</article>
+
+
+    
+    
+
+</section>
             
                 
 <aside id="sidebar">
