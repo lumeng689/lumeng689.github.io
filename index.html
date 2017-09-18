@@ -154,11 +154,11 @@
         </div>
         <div class="article-info profile-block">
             <div class="article-info-block">
-                3
+                5
                 <span>文章</span>
             </div>
             <div class="article-info-block">
-                1
+                5
                 <span>标签</span>
             </div>
         </div>
@@ -207,6 +207,311 @@
 
             
             <section id="main">
+    <article id="post-node-sass安装不成功解决办法" class="article article-type-post" itemscope itemprop="blogPost">
+    <div class="article-inner">
+        
+        
+            <header class="article-header">
+                
+    
+        <h1 itemprop="name">
+            <a class="article-title" href="/2017/09/18/node-sass安装不成功解决办法/">node-sass安装不成功解决办法</a>
+        </h1>
+    
+
+                
+                    <div class="article-meta">
+                        
+    <div class="article-date">
+        <i class="fa fa-calendar"></i>
+        <a href="/2017/09/18/node-sass安装不成功解决办法/">
+            <time datetime="2017-09-18T06:17:10.000Z" itemprop="datePublished">2017-09-18</time>
+        </a>
+    </div>
+
+
+                        
+                        
+    <div class="article-tag">
+        <i class="fa fa-tag"></i>
+        <a class="tag-link" href="/tags/node/">node</a>
+    </div>
+
+                    </div>
+                
+            </header>
+        
+        
+        <div class="article-entry" itemprop="articleBody">
+        
+            
+            <h1 id="设置国内的镜像"><a href="#设置国内的镜像" class="headerlink" title="设置国内的镜像"></a>设置国内的镜像</h1><p>windows下分两个命令执行<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">SET SASS_BINARY_SITE=https://npm.taobao.org/mirrors/node-sass/  <span class="comment"># --设置环境变量</span></div><div class="line">npm install node-sass   <span class="comment"># 安装</span></div></pre></td></tr></table></figure></p>
+<p>linux下一个命令就可以了<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">SASS_BINARY_SITE=https://npm.taobao.org/mirrors/node-sass/ npm install node-sass</div></pre></td></tr></table></figure></p>
+<h1 id="利用代理"><a href="#利用代理" class="headerlink" title="利用代理"></a>利用代理</h1><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">npm config <span class="built_in">set</span> proxy http://127.0.0.1:1080</div><div class="line">npm install node-sass   <span class="comment"># 安装</span></div></pre></td></tr></table></figure>
+
+        
+        </div>
+        <footer class="article-footer">
+            <div class="share-container">
+
+
+
+</div>
+
+    <a data-url="http://yoursite.com/2017/09/18/node-sass安装不成功解决办法/" data-id="cj7ps62i700085oj69eymriw9" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
+<script>
+    (function ($) {
+        // Prevent duplicate binding
+        if (typeof(__SHARE_BUTTON_BINDED__) === 'undefined' || !__SHARE_BUTTON_BINDED__) {
+            __SHARE_BUTTON_BINDED__ = true;
+        } else {
+            return;
+        }
+        $('body').on('click', function() {
+            $('.article-share-box.on').removeClass('on');
+        }).on('click', '.article-share-link', function(e) {
+            e.stopPropagation();
+
+            var $this = $(this),
+                url = $this.attr('data-url'),
+                encodedUrl = encodeURIComponent(url),
+                id = 'article-share-box-' + $this.attr('data-id'),
+                offset = $this.offset(),
+                box;
+
+            if ($('#' + id).length) {
+                box = $('#' + id);
+
+                if (box.hasClass('on')){
+                    box.removeClass('on');
+                    return;
+                }
+            } else {
+                var html = [
+                    '<div id="' + id + '" class="article-share-box">',
+                        '<input class="article-share-input" value="' + url + '">',
+                        '<div class="article-share-links">',
+                            '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="fa fa-twitter article-share-twitter" target="_blank" title="Twitter"></a>',
+                            '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="fa fa-facebook article-share-facebook" target="_blank" title="Facebook"></a>',
+                            '<a href="http://pinterest.com/pin/create/button/?url=' + encodedUrl + '" class="fa fa-pinterest article-share-pinterest" target="_blank" title="Pinterest"></a>',
+                            '<a href="https://plus.google.com/share?url=' + encodedUrl + '" class="fa fa-google article-share-google" target="_blank" title="Google+"></a>',
+                        '</div>',
+                    '</div>'
+                ].join('');
+
+              box = $(html);
+
+              $('body').append(box);
+            }
+
+            $('.article-share-box.on').hide();
+
+            box.css({
+                top: offset.top + 25,
+                left: offset.left
+            }).addClass('on');
+
+        }).on('click', '.article-share-box', function (e) {
+            e.stopPropagation();
+        }).on('click', '.article-share-box-input', function () {
+            $(this).select();
+        }).on('click', '.article-share-box-link', function (e) {
+            e.preventDefault();
+            e.stopPropagation();
+
+            window.open(this.href, 'article-share-box-window-' + Date.now(), 'width=500,height=450');
+        });
+    })(jQuery);
+</script>
+
+            
+    
+
+        </footer>
+    </div>
+    
+</article>
+
+
+
+    <article id="post-angular-cli常用命令" class="article article-type-post" itemscope itemprop="blogPost">
+    <div class="article-inner">
+        
+        
+            <header class="article-header">
+                
+    
+        <h1 itemprop="name">
+            <a class="article-title" href="/2017/09/18/angular-cli常用命令/">angular-cli常用命令</a>
+        </h1>
+    
+
+                
+                    <div class="article-meta">
+                        
+    <div class="article-date">
+        <i class="fa fa-calendar"></i>
+        <a href="/2017/09/18/angular-cli常用命令/">
+            <time datetime="2017-09-18T06:14:49.000Z" itemprop="datePublished">2017-09-18</time>
+        </a>
+    </div>
+
+
+                        
+                        
+    <div class="article-tag">
+        <i class="fa fa-tag"></i>
+        <a class="tag-link" href="/tags/Angular/">Angular</a>
+    </div>
+
+                    </div>
+                
+            </header>
+        
+        
+        <div class="article-entry" itemprop="articleBody">
+        
+            
+            <h1 id="NG常用命令"><a href="#NG常用命令" class="headerlink" title="NG常用命令"></a>NG常用命令</h1><h1 id="ng-help"><a href="#ng-help" class="headerlink" title="ng help"></a>ng help</h1><p>打印帮助信息</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">ng help</div></pre></td></tr></table></figure>
+<h1 id="ng-new"><a href="#ng-new" class="headerlink" title="ng new"></a>ng new</h1><p>创建新项目</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">ng new PROJECT_NAME</div><div class="line">ng new sassy-project --style=sass #使用sass框架</div></pre></td></tr></table></figure>
+<h1 id="ng-serve"><a href="#ng-serve" class="headerlink" title="ng serve"></a>ng serve</h1><p>启动服务</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">ng serve #简单情况</div><div class="line">ng serve --host 0.0.0.0 --port 4201 --live-reload-port 49153 # 指定端口</div></pre></td></tr></table></figure>
+<h1 id="ng-generate"><a href="#ng-generate" class="headerlink" title="ng generate"></a>ng generate</h1><p>简写 ng g ，用来生成angular2的组件，服务，接口等内容</p>
+<table>
+<thead>
+<tr>
+<th>名称</th>
+<th>命令</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Component</td>
+<td>ng g component my-new-component</td>
+</tr>
+<tr>
+<td>Directive</td>
+<td>ng g directive my-new-directive</td>
+</tr>
+<tr>
+<td>Pipe</td>
+<td>ng g pipe my-new-pipe</td>
+</tr>
+<tr>
+<td>Service</td>
+<td>ng g service my-new-service</td>
+</tr>
+<tr>
+<td>Class</td>
+<td>ng g class my-new-class</td>
+</tr>
+<tr>
+<td>Interface</td>
+<td>ng g interface my-new-interface</td>
+</tr>
+<tr>
+<td>Enum</td>
+<td>ng g enum my-new-enum</td>
+</tr>
+<tr>
+<td>Module</td>
+<td>ng g module my-module</td>
+</tr>
+</tbody>
+</table>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">ng g component my-new-component </div><div class="line">ng g directive my-new-directive</div><div class="line">ng g pipe my-new-pipe</div><div class="line">ng g service my-new-service</div><div class="line">ng g class my-new-class</div><div class="line">ng g interface my-new-interface</div><div class="line">ng g enum my-new-enum</div><div class="line">ng g module my-module</div></pre></td></tr></table></figure>
+<p>创建路由：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">ng new PROJECT_NAME --routing     # 创建项目时就创建一个app-routing.module.ts文件</div><div class="line">ng g module my-module --routing  # 创建模块时创建一个my-module-routing.module.ts文件</div></pre></td></tr></table></figure>
+<h1 id="ng-build"><a href="#ng-build" class="headerlink" title="ng build"></a>ng build</h1><p>构建项目 配置文件是angular-cli.json的文件</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"># 以下语句等价</div><div class="line">ng build --target=production --environment=prod</div><div class="line">ng build --prod --env=prod</div><div class="line">ng build --prod</div><div class="line"># 以下语句等价</div><div class="line">ng build --target=development --environment=dev</div><div class="line">ng build --dev --e=dev</div><div class="line">ng build --dev</div><div class="line">ng build</div></pre></td></tr></table></figure>
+
+        
+        </div>
+        <footer class="article-footer">
+            <div class="share-container">
+
+
+
+</div>
+
+    <a data-url="http://yoursite.com/2017/09/18/angular-cli常用命令/" data-id="cj7ps62ht00055oj6hswj0qih" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
+<script>
+    (function ($) {
+        // Prevent duplicate binding
+        if (typeof(__SHARE_BUTTON_BINDED__) === 'undefined' || !__SHARE_BUTTON_BINDED__) {
+            __SHARE_BUTTON_BINDED__ = true;
+        } else {
+            return;
+        }
+        $('body').on('click', function() {
+            $('.article-share-box.on').removeClass('on');
+        }).on('click', '.article-share-link', function(e) {
+            e.stopPropagation();
+
+            var $this = $(this),
+                url = $this.attr('data-url'),
+                encodedUrl = encodeURIComponent(url),
+                id = 'article-share-box-' + $this.attr('data-id'),
+                offset = $this.offset(),
+                box;
+
+            if ($('#' + id).length) {
+                box = $('#' + id);
+
+                if (box.hasClass('on')){
+                    box.removeClass('on');
+                    return;
+                }
+            } else {
+                var html = [
+                    '<div id="' + id + '" class="article-share-box">',
+                        '<input class="article-share-input" value="' + url + '">',
+                        '<div class="article-share-links">',
+                            '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="fa fa-twitter article-share-twitter" target="_blank" title="Twitter"></a>',
+                            '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="fa fa-facebook article-share-facebook" target="_blank" title="Facebook"></a>',
+                            '<a href="http://pinterest.com/pin/create/button/?url=' + encodedUrl + '" class="fa fa-pinterest article-share-pinterest" target="_blank" title="Pinterest"></a>',
+                            '<a href="https://plus.google.com/share?url=' + encodedUrl + '" class="fa fa-google article-share-google" target="_blank" title="Google+"></a>',
+                        '</div>',
+                    '</div>'
+                ].join('');
+
+              box = $(html);
+
+              $('body').append(box);
+            }
+
+            $('.article-share-box.on').hide();
+
+            box.css({
+                top: offset.top + 25,
+                left: offset.left
+            }).addClass('on');
+
+        }).on('click', '.article-share-box', function (e) {
+            e.stopPropagation();
+        }).on('click', '.article-share-box-input', function () {
+            $(this).select();
+        }).on('click', '.article-share-box-link', function (e) {
+            e.preventDefault();
+            e.stopPropagation();
+
+            window.open(this.href, 'article-share-box-window-' + Date.now(), 'width=500,height=450');
+        });
+    })(jQuery);
+</script>
+
+            
+    
+
+        </footer>
+    </div>
+    
+</article>
+
+
+
     <article id="post-MongoDB的导入导出" class="article article-type-post" itemscope itemprop="blogPost">
     <div class="article-inner">
         
@@ -232,6 +537,11 @@
 
                         
                         
+    <div class="article-tag">
+        <i class="fa fa-tag"></i>
+        <a class="tag-link" href="/tags/MongoDB/">MongoDB</a>
+    </div>
+
                     </div>
                 
             </header>
@@ -241,15 +551,15 @@
         
             
             <p>MongoDB的导入导出分为 文本导出 和 二进制导出，文本导出一次导出一个集合，方便与其他数据库交换数据，<br>二进制导出的是MongoDB自己的格式，可以导出整个数据库，体积小，速度快。</p>
-<h1 id="文本导出"><a href="#文本导出" class="headerlink" title="文本导出"></a>文本导出</h1><h2 id="mongoexport-导出表"><a href="#mongoexport-导出表" class="headerlink" title="mongoexport 导出表"></a>mongoexport 导出表</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">-h, --host=&lt;hostname&gt;              主机</div><div class="line">   --port=&lt;port&gt;                   端口</div><div class="line">-u, --username=&lt;username&gt;          用户名</div><div class="line">-p, --password=&lt;passwd&gt;            密码</div><div class="line">-d, --db=&lt;database-name&gt;           数据库名称</div><div class="line">-c, --collection=&lt;collection-name&gt; 集合名称</div><div class="line">-f, --fields=&lt;field&gt;[,&lt;field&gt;]*    逗号分隔的字段名称</div><div class="line">    --type=&lt;type&gt;                  json或者csv，默认json</div><div class="line">--type=&lt;type&gt;</div><div class="line">-o, --out=&lt;filename&gt;               导出文件名称</div></pre></td></tr></table></figure>
-<p>举例：  导出adminusers集合<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">mongoexport -h localhost -d cloudminds -c adminusers  -o ./adminusers.json</div></pre></td></tr></table></figure></p>
-<h2 id="mongoimport-导入数据"><a href="#mongoimport-导入数据" class="headerlink" title="mongoimport 导入数据"></a>mongoimport 导入数据</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">-h, --host=&lt;hostname&gt;              主机</div><div class="line">   --port=&lt;port&gt;                   端口</div><div class="line">-u, --username=&lt;username&gt;          用户名</div><div class="line">-p, --password=&lt;passwd&gt;            密码</div><div class="line">-d, --db=&lt;database-name&gt;           数据库名称</div><div class="line">-c, --collection=&lt;collection-name&gt; 集合名称</div><div class="line">-f, --fields=&lt;field&gt;[,&lt;field&gt;]*    逗号分隔的字段名称</div><div class="line">    --type=&lt;type&gt;                  json或者csv，默认json</div><div class="line">    --out=&lt;filename&gt;               要导入的文件名称</div><div class="line">--type=&lt;type&gt;</div></pre></td></tr></table></figure>
-<p>举例<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">mongoimport -h localhost -d cloudminds -c adminusers  --file ./adminusers.json</div></pre></td></tr></table></figure></p>
-<h1 id="二进制导出"><a href="#二进制导出" class="headerlink" title="二进制导出"></a>二进制导出</h1><h2 id="mongodump-导出二进制bson结构的数据及其索引信息"><a href="#mongodump-导出二进制bson结构的数据及其索引信息" class="headerlink" title="mongodump 导出二进制bson结构的数据及其索引信息"></a>mongodump 导出二进制bson结构的数据及其索引信息</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">-h, --host=&lt;hostname&gt;              主机</div><div class="line">    --port=&lt;port&gt;                  端口</div><div class="line">-u, --username=&lt;username&gt;          用户名</div><div class="line">-p, --password=&lt;passwd&gt;            密码</div><div class="line">-d, --db=&lt;database-name&gt;           数据库名称</div><div class="line">-c, --collection=&lt;collection-name&gt; 集合名称</div><div class="line">    --type=&lt;type&gt;</div><div class="line">-o, --out=&lt;filename&gt;               导出文件名称</div></pre></td></tr></table></figure>
+<h1 id="文本导出"><a href="#文本导出" class="headerlink" title="文本导出"></a>文本导出</h1><h2 id="mongoexport-导出表"><a href="#mongoexport-导出表" class="headerlink" title="mongoexport 导出表"></a>mongoexport 导出表</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">-h, --host=&lt;hostname&gt;              主机</div><div class="line">   --port=&lt;port&gt;                   端口</div><div class="line">-u, --username=&lt;username&gt;          用户名</div><div class="line">-p, --password=&lt;passwd&gt;            密码</div><div class="line">-d, --db=&lt;database-name&gt;           数据库名称</div><div class="line">-c, --collection=&lt;collection-name&gt; 集合名称</div><div class="line">-f, --fields=&lt;field&gt;[,&lt;field&gt;]*    逗号分隔的字段名称</div><div class="line">    --<span class="built_in">type</span>=&lt;<span class="built_in">type</span>&gt;                  json或者csv，默认json</div><div class="line">--<span class="built_in">type</span>=&lt;<span class="built_in">type</span>&gt;</div><div class="line">-o, --out=&lt;filename&gt;               导出文件名称</div></pre></td></tr></table></figure>
+<p>举例：  导出adminusers集合<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">mongoexport -h localhost -d cloudminds -c adminusers  -o ./adminusers.json</div></pre></td></tr></table></figure></p>
+<h2 id="mongoimport-导入数据"><a href="#mongoimport-导入数据" class="headerlink" title="mongoimport 导入数据"></a>mongoimport 导入数据</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">-h, --host=&lt;hostname&gt;              主机</div><div class="line">   --port=&lt;port&gt;                   端口</div><div class="line">-u, --username=&lt;username&gt;          用户名</div><div class="line">-p, --password=&lt;passwd&gt;            密码</div><div class="line">-d, --db=&lt;database-name&gt;           数据库名称</div><div class="line">-c, --collection=&lt;collection-name&gt; 集合名称</div><div class="line">-f, --fields=&lt;field&gt;[,&lt;field&gt;]*    逗号分隔的字段名称</div><div class="line">    --<span class="built_in">type</span>=&lt;<span class="built_in">type</span>&gt;                  json或者csv，默认json</div><div class="line">    --out=&lt;filename&gt;               要导入的文件名称</div><div class="line">--<span class="built_in">type</span>=&lt;<span class="built_in">type</span>&gt;</div></pre></td></tr></table></figure>
+<p>举例<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">mongoimport -h localhost -d cloudminds -c adminusers  --file ./adminusers.json</div></pre></td></tr></table></figure></p>
+<h1 id="二进制导出"><a href="#二进制导出" class="headerlink" title="二进制导出"></a>二进制导出</h1><h2 id="mongodump-导出二进制bson结构的数据及其索引信息"><a href="#mongodump-导出二进制bson结构的数据及其索引信息" class="headerlink" title="mongodump 导出二进制bson结构的数据及其索引信息"></a>mongodump 导出二进制bson结构的数据及其索引信息</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">-h, --host=&lt;hostname&gt;              主机</div><div class="line">    --port=&lt;port&gt;                  端口</div><div class="line">-u, --username=&lt;username&gt;          用户名</div><div class="line">-p, --password=&lt;passwd&gt;            密码</div><div class="line">-d, --db=&lt;database-name&gt;           数据库名称</div><div class="line">-c, --collection=&lt;collection-name&gt; 集合名称</div><div class="line">    --<span class="built_in">type</span>=&lt;<span class="built_in">type</span>&gt;</div><div class="line">-o, --out=&lt;filename&gt;               导出文件名称</div></pre></td></tr></table></figure>
 <p>导出cloudminds数据库中的数据到文件 bak中</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">mongodump -d cloudminds -o bak</div></pre></td></tr></table></figure>
-<h2 id="mongorestore-导入二进制文件"><a href="#mongorestore-导入二进制文件" class="headerlink" title="mongorestore 导入二进制文件"></a>mongorestore 导入二进制文件</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">```</div><div class="line"></div><div class="line">导入备份文件bak中的数据</div></pre></td></tr></table></figure>
-<p>  mongorestore –drop bak<br>```</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">mongodump -d cloudminds -o bak</div></pre></td></tr></table></figure>
+<h2 id="mongorestore-导入二进制文件"><a href="#mongorestore-导入二进制文件" class="headerlink" title="mongorestore 导入二进制文件"></a>mongorestore 导入二进制文件</h2><p>导入备份文件bak中的数据</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">mongorestore --drop bak</div></pre></td></tr></table></figure>
 
         
         </div>
@@ -260,7 +570,7 @@
 
 </div>
 
-    <a data-url="http://yoursite.com/2017/09/18/MongoDB的导入导出/" data-id="cj7pmab7a0000k8j6s8vdf9ig" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
+    <a data-url="http://yoursite.com/2017/09/18/MongoDB的导入导出/" data-id="cj7ps62h900005oj6jxsp99d0" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
 <script>
     (function ($) {
         // Prevent duplicate binding
@@ -397,7 +707,7 @@
 
 </div>
 
-    <a data-url="http://yoursite.com/2017/09/06/PM2-随系统启动配置/" data-id="cj7pmab7l0002k8j6pq5k1gvo" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
+    <a data-url="http://yoursite.com/2017/09/06/PM2-随系统启动配置/" data-id="cj7ps62hi00025oj6qgdll2tl" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
 <script>
     (function ($) {
         // Prevent duplicate binding
@@ -498,6 +808,11 @@
 
                         
                         
+    <div class="article-tag">
+        <i class="fa fa-tag"></i>
+        <a class="tag-link" href="/tags/开发/">开发</a>
+    </div>
+
                     </div>
                 
             </header>
@@ -522,7 +837,7 @@
 
 </div>
 
-    <a data-url="http://yoursite.com/2017/09/06/解决端口占用问题/" data-id="cj7pmab7q0004k8j6bgf6wm1f" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
+    <a data-url="http://yoursite.com/2017/09/06/解决端口占用问题/" data-id="cj7ps62i000075oj60yy1my0a" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
 <script>
     (function ($) {
         // Prevent duplicate binding
@@ -611,6 +926,44 @@
                     <li>
                         
                         <div class="item-thumbnail">
+                            <a href="/2017/09/18/node-sass安装不成功解决办法/" class="thumbnail">
+    
+    
+        <span class="thumbnail-image thumbnail-none"></span>
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"></p>
+                            <p class="item-title"><a href="/2017/09/18/node-sass安装不成功解决办法/" class="title">node-sass安装不成功解决办法</a></p>
+                            <p class="item-date"><time datetime="2017-09-18T06:17:10.000Z" itemprop="datePublished">2017-09-18</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2017/09/18/angular-cli常用命令/" class="thumbnail">
+    
+    
+        <span class="thumbnail-image thumbnail-none"></span>
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"></p>
+                            <p class="item-title"><a href="/2017/09/18/angular-cli常用命令/" class="title">angular-cli常用命令</a></p>
+                            <p class="item-date"><time datetime="2017-09-18T06:14:49.000Z" itemprop="datePublished">2017-09-18</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
                             <a href="/2017/09/18/MongoDB的导入导出/" class="thumbnail">
     
     
@@ -676,7 +1029,7 @@
     <div class="widget-wrap">
         <h3 class="widget-title">归档</h3>
         <div class="widget">
-            <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/09/">九月 2017</a><span class="archive-list-count">3</span></li></ul>
+            <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/09/">九月 2017</a><span class="archive-list-count">5</span></li></ul>
         </div>
     </div>
 
@@ -685,7 +1038,7 @@
     <div class="widget-wrap">
         <h3 class="widget-title">标签</h3>
         <div class="widget">
-            <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/PM2/">PM2</a><span class="tag-list-count">1</span></li></ul>
+            <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Angular/">Angular</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/MongoDB/">MongoDB</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/PM2/">PM2</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/node/">node</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/开发/">开发</a><span class="tag-list-count">1</span></li></ul>
         </div>
     </div>
 
@@ -694,7 +1047,7 @@
     <div class="widget-wrap">
         <h3 class="widget-title">标签云</h3>
         <div class="widget tagcloud">
-            <a href="/tags/PM2/" style="font-size: 10px;">PM2</a>
+            <a href="/tags/Angular/" style="font-size: 10px;">Angular</a> <a href="/tags/MongoDB/" style="font-size: 10px;">MongoDB</a> <a href="/tags/PM2/" style="font-size: 10px;">PM2</a> <a href="/tags/node/" style="font-size: 10px;">node</a> <a href="/tags/开发/" style="font-size: 10px;">开发</a>
         </div>
     </div>
 
