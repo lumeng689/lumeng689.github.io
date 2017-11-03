@@ -3,16 +3,20 @@
 <head>
     <meta charset="utf-8">
     
-    <title>About | Lim&#39;s 博客</title>
+    <title>ubuntu下zookeeper安装 | Lim&#39;s 博客</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
-    <meta property="og:type" content="website">
-<meta property="og:title" content="About">
-<meta property="og:url" content="http://yoursite.com/about/index.html">
+    <meta name="description" content="1.下载zookeeper, 并解压123cd /optwget http://mirror.bit.edu.cn/apache/zookeeper/stable/zookeeper-3.4.10.tar.gztar -xvf zookeeper-3.4.10.tar.gz 2.创建数据文件1mkdir -p /data/zookeeper 3.创建配置文件12cd ./confmv zoo_sa">
+<meta name="keywords" content="zookeeper">
+<meta property="og:type" content="article">
+<meta property="og:title" content="ubuntu下zookeeper安装">
+<meta property="og:url" content="http://yoursite.com/2017/11/03/ubuntu下zookeeper安装/index.html">
 <meta property="og:site_name" content="Lim&#39;s 博客">
+<meta property="og:description" content="1.下载zookeeper, 并解压123cd /optwget http://mirror.bit.edu.cn/apache/zookeeper/stable/zookeeper-3.4.10.tar.gztar -xvf zookeeper-3.4.10.tar.gz 2.创建数据文件1mkdir -p /data/zookeeper 3.创建配置文件12cd ./confmv zoo_sa">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2017-08-31T04:13:03.000Z">
+<meta property="og:updated_time" content="2017-11-03T10:20:11.964Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="About">
+<meta name="twitter:title" content="ubuntu下zookeeper安装">
+<meta name="twitter:description" content="1.下载zookeeper, 并解压123cd /optwget http://mirror.bit.edu.cn/apache/zookeeper/stable/zookeeper-3.4.10.tar.gztar -xvf zookeeper-3.4.10.tar.gz 2.创建数据文件1mkdir -p /data/zookeeper 3.创建配置文件12cd ./confmv zoo_sa">
     
 
     
@@ -207,7 +211,7 @@
 </aside>
 
             
-            <section id="main"><article id="page-undefined" class="article article-type-page" itemscope itemprop="blogPost">
+            <section id="main"><article id="post-ubuntu下zookeeper安装" class="article article-type-post" itemscope itemprop="blogPost">
     <div class="article-inner">
         
         
@@ -215,10 +219,29 @@
                 
     
         <h1 class="article-title" itemprop="name">
-            About
+            ubuntu下zookeeper安装
         </h1>
     
 
+                
+                    <div class="article-meta">
+                        
+    <div class="article-date">
+        <i class="fa fa-calendar"></i>
+        <a href="/2017/11/03/ubuntu下zookeeper安装/">
+            <time datetime="2017-11-03T10:09:16.000Z" itemprop="datePublished">2017-11-03</time>
+        </a>
+    </div>
+
+
+                        
+                        
+    <div class="article-tag">
+        <i class="fa fa-tag"></i>
+        <a class="tag-link" href="/tags/zookeeper/">zookeeper</a>
+    </div>
+
+                    </div>
                 
             </header>
         
@@ -226,7 +249,12 @@
         <div class="article-entry" itemprop="articleBody">
         
             
-            
+            <p>1.下载zookeeper, 并解压<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">cd</span> /opt</div><div class="line">wget http://mirror.bit.edu.cn/apache/zookeeper/stable/zookeeper-3.4.10.tar.gz</div><div class="line">tar -xvf zookeeper-3.4.10.tar.gz</div></pre></td></tr></table></figure></p>
+<p>2.创建数据文件<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">mkdir -p /data/zookeeper</div></pre></td></tr></table></figure></p>
+<p>3.创建配置文件<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">cd</span> ./conf</div><div class="line">mv zoo_sample.cfg  zoo.cfg</div></pre></td></tr></table></figure></p>
+<p>4.设置数据文件目录, 更改zoo.cfg中配置：dataDir=/data/zookeeper </p>
+<p>5.启动服务<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">cd ./bin</div><div class="line">./zkServer.sh start</div></pre></td></tr></table></figure></p>
+
         
         </div>
         <footer class="article-footer">
@@ -236,7 +264,7 @@
 
 </div>
 
-    <a data-url="http://yoursite.com/about/index.html" data-id="cj9jr1yhv00010sj6c5cvfy4c" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
+    <a data-url="http://yoursite.com/2017/11/03/ubuntu下zookeeper安装/" data-id="cj9jr1yj0000h0sj6tg3myt2f" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
 <script>
     (function ($) {
         // Prevent duplicate binding
@@ -309,6 +337,25 @@
     </div>
     
         
+<nav id="article-nav">
+    
+        <a href="/2017/11/03/zookeeper常用命令/" id="article-nav-newer" class="article-nav-link-wrap">
+            <strong class="article-nav-caption">上一篇</strong>
+            <div class="article-nav-title">
+                
+                    zookeeper常用命令
+                
+            </div>
+        </a>
+    
+    
+        <a href="/2017/11/03/nvm教程/" id="article-nav-older" class="article-nav-link-wrap">
+            <strong class="article-nav-caption">下一篇</strong>
+            <div class="article-nav-title">nvm教程</div>
+        </a>
+    
+</nav>
+
 
     
 </article>

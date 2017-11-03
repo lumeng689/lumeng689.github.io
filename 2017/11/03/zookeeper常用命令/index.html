@@ -3,16 +3,20 @@
 <head>
     <meta charset="utf-8">
     
-    <title>About | Lim&#39;s 博客</title>
+    <title>zookeeper常用命令 | Lim&#39;s 博客</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
-    <meta property="og:type" content="website">
-<meta property="og:title" content="About">
-<meta property="og:url" content="http://yoursite.com/about/index.html">
+    <meta name="description" content="zookeeper 安装目录下有 zkCli工具（windows下 zkCli.cmd, linux 下 zkCli.sh）12./zkCli.sh  # 连接本地 zookeeper./zkCli.sh -server 10.1.1.3:2181 # 连接远程zookeeper 以下命令均是在zkCli下输入。  ls查看节点1ls /   输出：1[zookeeper, hhh, xyz]">
+<meta name="keywords" content="zookeeper">
+<meta property="og:type" content="article">
+<meta property="og:title" content="zookeeper常用命令">
+<meta property="og:url" content="http://yoursite.com/2017/11/03/zookeeper常用命令/index.html">
 <meta property="og:site_name" content="Lim&#39;s 博客">
+<meta property="og:description" content="zookeeper 安装目录下有 zkCli工具（windows下 zkCli.cmd, linux 下 zkCli.sh）12./zkCli.sh  # 连接本地 zookeeper./zkCli.sh -server 10.1.1.3:2181 # 连接远程zookeeper 以下命令均是在zkCli下输入。  ls查看节点1ls /   输出：1[zookeeper, hhh, xyz]">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2017-08-31T04:13:03.000Z">
+<meta property="og:updated_time" content="2017-11-03T10:20:11.954Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="About">
+<meta name="twitter:title" content="zookeeper常用命令">
+<meta name="twitter:description" content="zookeeper 安装目录下有 zkCli工具（windows下 zkCli.cmd, linux 下 zkCli.sh）12./zkCli.sh  # 连接本地 zookeeper./zkCli.sh -server 10.1.1.3:2181 # 连接远程zookeeper 以下命令均是在zkCli下输入。  ls查看节点1ls /   输出：1[zookeeper, hhh, xyz]">
     
 
     
@@ -207,7 +211,7 @@
 </aside>
 
             
-            <section id="main"><article id="page-undefined" class="article article-type-page" itemscope itemprop="blogPost">
+            <section id="main"><article id="post-zookeeper常用命令" class="article article-type-post" itemscope itemprop="blogPost">
     <div class="article-inner">
         
         
@@ -215,10 +219,29 @@
                 
     
         <h1 class="article-title" itemprop="name">
-            About
+            zookeeper常用命令
         </h1>
     
 
+                
+                    <div class="article-meta">
+                        
+    <div class="article-date">
+        <i class="fa fa-calendar"></i>
+        <a href="/2017/11/03/zookeeper常用命令/">
+            <time datetime="2017-11-03T10:09:16.000Z" itemprop="datePublished">2017-11-03</time>
+        </a>
+    </div>
+
+
+                        
+                        
+    <div class="article-tag">
+        <i class="fa fa-tag"></i>
+        <a class="tag-link" href="/tags/zookeeper/">zookeeper</a>
+    </div>
+
+                    </div>
                 
             </header>
         
@@ -226,7 +249,65 @@
         <div class="article-entry" itemprop="articleBody">
         
             
-            
+            <p>zookeeper 安装目录下有 zkCli工具（windows下 zkCli.cmd, linux 下 zkCli.sh）<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">./zkCli.sh  # 连接本地 zookeeper</div><div class="line">./zkCli.sh -server 10.1.1.3:2181 # 连接远程zookeeper</div></pre></td></tr></table></figure></p>
+<p>以下命令均是在zkCli下输入。</p>
+<ol>
+<li>ls<br>查看节点<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">ls /</div></pre></td></tr></table></figure>
+</li>
+</ol>
+<p>输出：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">[zookeeper, hhh, xyz]</div></pre></td></tr></table></figure></p>
+<ol>
+<li>ls2<br>查看节点详细数据<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">ls2 /</div></pre></td></tr></table></figure>
+</li>
+</ol>
+<p>输出：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line">[hhh, a, b, zookeeper, dubbo]</div><div class="line">cZxid = 0x0</div><div class="line">ctime = Thu Jan 01 08:00:00 CST 1970</div><div class="line">mZxid = 0x0</div><div class="line">mtime = Thu Jan 01 08:00:00 CST 1970</div><div class="line">pZxid = 0x1c0</div><div class="line">cversion = 9</div><div class="line">dataVersion = 0</div><div class="line">aclVersion = 0</div><div class="line">ephemeralOwner = 0x0</div><div class="line">dataLength = 0</div><div class="line">numChildren = 5</div></pre></td></tr></table></figure></p>
+<p>节点信息介绍<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">cZxid：节点创建时的zxid</div><div class="line">ctime：节点创建时间</div><div class="line">mZxid： 节点最新一次更新发生时的zxid</div><div class="line">mtime： 节点最新一次更新发生时间</div><div class="line">pZxid： 0x198</div><div class="line">cversion： 其子节点的更新次数</div><div class="line">dataVersion： 节点数据的更新次数</div><div class="line">aclVersion： 节点ACL(授权信息)的更新次数</div><div class="line">ephemeralOwner： 如果该节点为ephemeral节点, ephemeralOwner值表示与该节点绑定的session id. 如果该节点不是ephemeral节点, ephemeralOwner值为0</div><div class="line">dataLength： 节点数据的字节数</div><div class="line">numChildren： 子节点个数</div></pre></td></tr></table></figure></p>
+<ol>
+<li><p>create<br>创建节点， 其中-e 代表临时节点 -s代表持久节点 默认是-s。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">create -e /node data # 创建临时节点</div><div class="line">create -s /node data</div></pre></td></tr></table></figure>
+</li>
+<li><p>get<br>获取节点数据</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">get /node</div></pre></td></tr></table></figure>
+</li>
+<li><p>set<br>更新节点数据</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">set /node data</div></pre></td></tr></table></figure>
+</li>
+<li><p>delete<br>删除节点 （子节点为空时会删除失败）</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">delete /node</div></pre></td></tr></table></figure>
+</li>
+<li><p>rmr<br>删除节点 （存在子节点仍能删除成功）</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">rmr /node</div></pre></td></tr></table></figure>
+</li>
+<li><p>stat<br>获取节点信息</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">stat /node</div></pre></td></tr></table></figure>
+</li>
+<li><p>sync</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">delete /hari</div><div class="line">rmr /hari</div></pre></td></tr></table></figure>
+</li>
+<li><p>getAcl<br>获取权限数据</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">getAcl /dubbo</div></pre></td></tr></table></figure>
+</li>
+</ol>
+<p>输出：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">&apos;world,&apos;anyone</div><div class="line">: cdrwa</div></pre></td></tr></table></figure></p>
+<p>简单说ACL 和UGO（User，Group，Other）一样，都是权限控制的方式，acl字段分为 scheme:id:permission<br>上面的权限模式是’world,’，授权对象ID是anyone，权限是cdrwa（create, delete, read, write, admin）</p>
+<ol>
+<li><p>setAcl</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">setAcl /node world:anyone:crdwa</div><div class="line">setAcl /newnode ip:127.0.0.1:crdwa</div><div class="line"></div><div class="line">addauth digest user_abc:pwd_abc # 先添加auth信息</div><div class="line">setAcl /newnode digest:user_abc:pwd_abc:crdwa</div></pre></td></tr></table></figure>
+</li>
+<li><p>setquota<br>setquota ：设置子节点的个数（-n：子节点个数的限制，-b：数据数据节点数据长度的限制）</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">setquota -n 3 /node</div></pre></td></tr></table></figure>
+</li>
+<li><p>delquota<br>删除数据节点配额的情况</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">delquota /node</div></pre></td></tr></table></figure>
+</li>
+<li><p>listquota<br>查看数据节点配额的情况</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">listquota /node</div></pre></td></tr></table></figure>
+</li>
+<li><p>sync</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">sync /aa</div></pre></td></tr></table></figure>
+</li>
+</ol>
+
         
         </div>
         <footer class="article-footer">
@@ -236,7 +317,7 @@
 
 </div>
 
-    <a data-url="http://yoursite.com/about/index.html" data-id="cj9jr1yhv00010sj6c5cvfy4c" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
+    <a data-url="http://yoursite.com/2017/11/03/zookeeper常用命令/" data-id="cj9jr1yis000c0sj6sbm2uwp7" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
 <script>
     (function ($) {
         // Prevent duplicate binding
@@ -309,6 +390,16 @@
     </div>
     
         
+<nav id="article-nav">
+    
+    
+        <a href="/2017/11/03/ubuntu下zookeeper安装/" id="article-nav-older" class="article-nav-link-wrap">
+            <strong class="article-nav-caption">下一篇</strong>
+            <div class="article-nav-title">ubuntu下zookeeper安装</div>
+        </a>
+    
+</nav>
+
 
     
 </article>

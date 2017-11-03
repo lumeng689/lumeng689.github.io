@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2017-09-18T06:33:32.835Z</updated>
+  <updated>2017-11-03T10:20:11.954Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -14,6 +14,148 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>zookeeper常用命令</title>
+    <link href="http://yoursite.com/2017/11/03/zookeeper%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/"/>
+    <id>http://yoursite.com/2017/11/03/zookeeper常用命令/</id>
+    <published>2017-11-03T10:09:16.000Z</published>
+    <updated>2017-11-03T10:20:11.954Z</updated>
+    
+    <content type="html"><![CDATA[<p>zookeeper 安装目录下有 zkCli工具（windows下 zkCli.cmd, linux 下 zkCli.sh）<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">./zkCli.sh  # 连接本地 zookeeper</div><div class="line">./zkCli.sh -server 10.1.1.3:2181 # 连接远程zookeeper</div></pre></td></tr></table></figure></p>
+<p>以下命令均是在zkCli下输入。</p>
+<ol>
+<li>ls<br>查看节点<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">ls /</div></pre></td></tr></table></figure>
+</li>
+</ol>
+<p>输出：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">[zookeeper, hhh, xyz]</div></pre></td></tr></table></figure></p>
+<ol>
+<li>ls2<br>查看节点详细数据<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">ls2 /</div></pre></td></tr></table></figure>
+</li>
+</ol>
+<p>输出：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line">[hhh, a, b, zookeeper, dubbo]</div><div class="line">cZxid = 0x0</div><div class="line">ctime = Thu Jan 01 08:00:00 CST 1970</div><div class="line">mZxid = 0x0</div><div class="line">mtime = Thu Jan 01 08:00:00 CST 1970</div><div class="line">pZxid = 0x1c0</div><div class="line">cversion = 9</div><div class="line">dataVersion = 0</div><div class="line">aclVersion = 0</div><div class="line">ephemeralOwner = 0x0</div><div class="line">dataLength = 0</div><div class="line">numChildren = 5</div></pre></td></tr></table></figure></p>
+<p>节点信息介绍<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">cZxid：节点创建时的zxid</div><div class="line">ctime：节点创建时间</div><div class="line">mZxid： 节点最新一次更新发生时的zxid</div><div class="line">mtime： 节点最新一次更新发生时间</div><div class="line">pZxid： 0x198</div><div class="line">cversion： 其子节点的更新次数</div><div class="line">dataVersion： 节点数据的更新次数</div><div class="line">aclVersion： 节点ACL(授权信息)的更新次数</div><div class="line">ephemeralOwner： 如果该节点为ephemeral节点, ephemeralOwner值表示与该节点绑定的session id. 如果该节点不是ephemeral节点, ephemeralOwner值为0</div><div class="line">dataLength： 节点数据的字节数</div><div class="line">numChildren： 子节点个数</div></pre></td></tr></table></figure></p>
+<ol>
+<li><p>create<br>创建节点， 其中-e 代表临时节点 -s代表持久节点 默认是-s。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">create -e /node data # 创建临时节点</div><div class="line">create -s /node data</div></pre></td></tr></table></figure>
+</li>
+<li><p>get<br>获取节点数据</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">get /node</div></pre></td></tr></table></figure>
+</li>
+<li><p>set<br>更新节点数据</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">set /node data</div></pre></td></tr></table></figure>
+</li>
+<li><p>delete<br>删除节点 （子节点为空时会删除失败）</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">delete /node</div></pre></td></tr></table></figure>
+</li>
+<li><p>rmr<br>删除节点 （存在子节点仍能删除成功）</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">rmr /node</div></pre></td></tr></table></figure>
+</li>
+<li><p>stat<br>获取节点信息</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">stat /node</div></pre></td></tr></table></figure>
+</li>
+<li><p>sync</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">delete /hari</div><div class="line">rmr /hari</div></pre></td></tr></table></figure>
+</li>
+<li><p>getAcl<br>获取权限数据</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">getAcl /dubbo</div></pre></td></tr></table></figure>
+</li>
+</ol>
+<p>输出：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">&apos;world,&apos;anyone</div><div class="line">: cdrwa</div></pre></td></tr></table></figure></p>
+<p>简单说ACL 和UGO（User，Group，Other）一样，都是权限控制的方式，acl字段分为 scheme:id:permission<br>上面的权限模式是’world,’，授权对象ID是anyone，权限是cdrwa（create, delete, read, write, admin）</p>
+<ol>
+<li><p>setAcl</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">setAcl /node world:anyone:crdwa</div><div class="line">setAcl /newnode ip:127.0.0.1:crdwa</div><div class="line"></div><div class="line">addauth digest user_abc:pwd_abc # 先添加auth信息</div><div class="line">setAcl /newnode digest:user_abc:pwd_abc:crdwa</div></pre></td></tr></table></figure>
+</li>
+<li><p>setquota<br>setquota ：设置子节点的个数（-n：子节点个数的限制，-b：数据数据节点数据长度的限制）</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">setquota -n 3 /node</div></pre></td></tr></table></figure>
+</li>
+<li><p>delquota<br>删除数据节点配额的情况</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">delquota /node</div></pre></td></tr></table></figure>
+</li>
+<li><p>listquota<br>查看数据节点配额的情况</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">listquota /node</div></pre></td></tr></table></figure>
+</li>
+<li><p>sync</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">sync /aa</div></pre></td></tr></table></figure>
+</li>
+</ol>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;zookeeper 安装目录下有 zkCli工具（windows下 zkCli.cmd, linux 下 zkCli.sh）&lt;br&gt;&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div
+    
+    </summary>
+    
+    
+      <category term="zookeeper" scheme="http://yoursite.com/tags/zookeeper/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>ubuntu下zookeeper安装</title>
+    <link href="http://yoursite.com/2017/11/03/ubuntu%E4%B8%8Bzookeeper%E5%AE%89%E8%A3%85/"/>
+    <id>http://yoursite.com/2017/11/03/ubuntu下zookeeper安装/</id>
+    <published>2017-11-03T10:09:16.000Z</published>
+    <updated>2017-11-03T10:20:11.964Z</updated>
+    
+    <content type="html"><![CDATA[<p>1.下载zookeeper, 并解压<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">cd</span> /opt</div><div class="line">wget http://mirror.bit.edu.cn/apache/zookeeper/stable/zookeeper-3.4.10.tar.gz</div><div class="line">tar -xvf zookeeper-3.4.10.tar.gz</div></pre></td></tr></table></figure></p>
+<p>2.创建数据文件<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">mkdir -p /data/zookeeper</div></pre></td></tr></table></figure></p>
+<p>3.创建配置文件<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">cd</span> ./conf</div><div class="line">mv zoo_sample.cfg  zoo.cfg</div></pre></td></tr></table></figure></p>
+<p>4.设置数据文件目录, 更改zoo.cfg中配置：dataDir=/data/zookeeper </p>
+<p>5.启动服务<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">cd ./bin</div><div class="line">./zkServer.sh start</div></pre></td></tr></table></figure></p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;1.下载zookeeper, 并解压&lt;br&gt;&lt;figure class=&quot;highlight bash&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;2&lt;/div
+    
+    </summary>
+    
+    
+      <category term="zookeeper" scheme="http://yoursite.com/tags/zookeeper/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>nvm教程</title>
+    <link href="http://yoursite.com/2017/11/03/nvm%E6%95%99%E7%A8%8B/"/>
+    <id>http://yoursite.com/2017/11/03/nvm教程/</id>
+    <published>2017-11-03T10:09:16.000Z</published>
+    <updated>2017-11-03T10:20:11.931Z</updated>
+    
+    <content type="html"><![CDATA[<ol>
+<li><p>下载 在地址  <a href="https://github.com/coreybutler/nvm-windows/releases" target="_blank" rel="external">https://github.com/coreybutler/nvm-windows/releases</a><br>找最新版本的nvm-setup.zip 下载</p>
+</li>
+<li><p>安装，一路next。</p>
+</li>
+<li><p>执行 nvm list available   查看所有可用版本</p>
+</li>
+<li><p>nvm install xx.xx.xx 安装指定版本 </p>
+</li>
+<li><p>nvm list 查看当前可用版本</p>
+</li>
+<li><p>nvm use xx.xx.xx 使用指定版本</p>
+</li>
+<li><p>node –version 确认版本切换成功。</p>
+</li>
+<li><p>nvm uninstall xx.xx.xx 卸载指定版本</p>
+</li>
+</ol>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;ol&gt;
+&lt;li&gt;&lt;p&gt;下载 在地址  &lt;a href=&quot;https://github.com/coreybutler/nvm-windows/releases&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;https://github.com/coreybut
+    
+    </summary>
+    
+    
+      <category term="nvm" scheme="http://yoursite.com/tags/nvm/"/>
+    
+  </entry>
   
   <entry>
     <title>Express项目安全建议</title>
@@ -168,7 +310,7 @@
 <p>重启nginx<br><figure class="highlight shell"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">nginx -s reload</div></pre></td></tr></table></figure></p>
 <p> 或者<br><figure class="highlight shell"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">service nginx restart</div></pre></td></tr></table></figure></p>
 <p>CentOS7需要关闭selinux功能,否则端口转发时会出错<br>编辑selinux文件<br><figure class="highlight shell"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">/etc/sysconfig/selinux</div></pre></td></tr></table></figure></p>
-<p>注释掉下面代码<br><figure class="highlight shell"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="meta">#</span><span class="bash">SELINUX=enforcing</span></div></pre></td></tr></table></figure></p>
+<p>注释掉下面代码<br><figure class="highlight shell"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="meta">#</span>SELINUX=enforcing</div></pre></td></tr></table></figure></p>
 <p>将此行代码取消注释,修改后为:<br><figure class="highlight shell"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">SELINUX=disabled</div></pre></td></tr></table></figure></p>
 <p>设置 SELinux 状态<br><figure class="highlight shell"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">setenforce 0</div></pre></td></tr></table></figure></p>
 <p>执行命令,获取SELinux状态</p>
