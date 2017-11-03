@@ -9,19 +9,19 @@
       </tags>
   </entry>
   <entry>
-    <title><![CDATA[ubuntu下zookeeper安装]]></title>
-    <url>%2F2017%2F11%2F03%2Fubuntu%E4%B8%8Bzookeeper%E5%AE%89%E8%A3%85%2F</url>
-    <content type="text"><![CDATA[1.下载zookeeper, 并解压123cd /optwget http://mirror.bit.edu.cn/apache/zookeeper/stable/zookeeper-3.4.10.tar.gztar -xvf zookeeper-3.4.10.tar.gz 2.创建数据文件1mkdir -p /data/zookeeper 3.创建配置文件12cd ./confmv zoo_sample.cfg zoo.cfg 4.设置数据文件目录, 更改zoo.cfg中配置：dataDir=/data/zookeeper 5.启动服务12cd ./bin./zkServer.sh start]]></content>
-      <tags>
-        <tag>zookeeper</tag>
-      </tags>
-  </entry>
-  <entry>
     <title><![CDATA[nvm教程]]></title>
     <url>%2F2017%2F11%2F03%2Fnvm%E6%95%99%E7%A8%8B%2F</url>
     <content type="text"><![CDATA[下载 在地址 https://github.com/coreybutler/nvm-windows/releases找最新版本的nvm-setup.zip 下载 安装，一路next。 执行 nvm list available 查看所有可用版本 nvm install xx.xx.xx 安装指定版本 nvm list 查看当前可用版本 nvm use xx.xx.xx 使用指定版本 node –version 确认版本切换成功。 nvm uninstall xx.xx.xx 卸载指定版本]]></content>
       <tags>
         <tag>nvm</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[ubuntu下zookeeper安装]]></title>
+    <url>%2F2017%2F11%2F03%2Fubuntu%E4%B8%8Bzookeeper%E5%AE%89%E8%A3%85%2F</url>
+    <content type="text"><![CDATA[1.下载zookeeper, 并解压123cd /optwget http://mirror.bit.edu.cn/apache/zookeeper/stable/zookeeper-3.4.10.tar.gztar -xvf zookeeper-3.4.10.tar.gz 2.创建数据文件1mkdir -p /data/zookeeper 3.创建配置文件12cd ./confmv zoo_sample.cfg zoo.cfg 4.设置数据文件目录, 更改zoo.cfg中配置：dataDir=/data/zookeeper 5.启动服务12cd ./bin./zkServer.sh start]]></content>
+      <tags>
+        <tag>zookeeper</tag>
       </tags>
   </entry>
   <entry>
