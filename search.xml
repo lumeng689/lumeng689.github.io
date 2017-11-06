@@ -1,9 +1,30 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[Ubuntu服务器 node服务器基本配置]]></title>
+    <url>%2F2017%2F11%2F06%2FUbuntu%E6%9C%8D%E5%8A%A1%E5%99%A8-node%E6%9C%8D%E5%8A%A1%E5%99%A8%E5%9F%BA%E6%9C%AC%E9%85%8D%E7%BD%AE%2F</url>
+    <content type="text"><![CDATA[〇 查看ubuntu的版本执行命令：12345cat /proc/version # 查看内核版本uname -a # 查看内核版本cat /etc/issue # 方法一lsb_release -a # 方法二cat /etc/lsb-release # 方法三 node环境安装 执行以下命令： 1curl -sL https://deb.nodesource.com/setup_6.x | sudo -E bash - 然后执行: 1apt-get install nodejs pm2安装pm2和forever是启动Nodejs服务常用到的两个工具。使用这两个指令可以使node服务在后台运行，另外它们可以在服务因异常或其他原因被杀掉后进行自动重启。当前项目选用pm2。1npm install -g pm2 MongoDB的安装 导入公钥 1sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv 0C49F3730359A14518585931BC711F9BA15703C6 创建list文件：12.04系统下： 1echo "deb [ arch=amd64 ] http://repo.mongodb.org/apt/ubuntu precise/mongodb-org/3.4 multiverse" | sudo tee /etc/apt/sources.list.d/mongodb-org-3.4.list 14.04系统下 1echo "deb [ arch=amd64 ] http://repo.mongodb.org/apt/ubuntu trusty/mongodb-org/3.4 multiverse" | sudo tee /etc/apt/sources.list.d/mongodb-org-3.4.list 16.04系统下 1echo "deb [ arch=amd64,arm64 ] http://repo.mongodb.org/apt/ubuntu xenial/mongodb-org/3.4 multiverse" | sudo tee /etc/apt/sources.list.d/mongodb-org-3.4.list 更新本地包的数据 1sudo apt-get update 最后执行命令进行安装 1sudo apt-get install -y mongodb-org 启动mongod服务 1sudo service mongod start Redis的安装 下载解压文件 1234wget http://download.redis.io/redis-stable.tar.gztar xvzf redis-stable.tar.gzcd redis-stablemake 将运行文件安装到 /usr/bin 1make install 创建配置文件夹和数据文件夹 12sudo mkdir /etc/redissudo mkdir /var/redis 将编译目录下的脚本拷贝到init.d文件夹下 1sudo cp utils/redis_init_script /etc/init.d/redis_6379 拷贝配置文件 1sudo cp redis.conf /etc/redis/6379.conf 为redis创建一个数据和工作目录 1sudo mkdir /var/redis/6379 编辑/etc/redis/6379.conf 把参数 daemonize 设置为 yes (默认是 no). 设置 pidfile 为 /var/run/redis_6379.pid (可以根据需要改变端口). 如果有需要可以改变 port 参数. 默认6379. 设置 loglevel 参数为合适值. 设置 logfile 为 /var/log/redis_6379.log 设置 dir 为 /var/redis/6379 (此步骤很重要!) 执行命令： 1sudo update-rc.d redis_6379 defaults 启动程序 1sudo /etc/init.d/redis_6379 start]]></content>
+  </entry>
+  <entry>
+    <title><![CDATA[CentOS环境 node服务器基本配置]]></title>
+    <url>%2F2017%2F11%2F06%2FCentOS%E7%8E%AF%E5%A2%83-node%E6%9C%8D%E5%8A%A1%E5%99%A8%E5%9F%BA%E6%9C%AC%E9%85%8D%E7%BD%AE%2F</url>
+    <content type="text"><![CDATA[node环境安装 执行以下命令： 1curl --silent --location https://rpm.nodesource.com/setup_6.x | bash - 然后执行: 1yum -y install nodejs pm2安装pm2和forever是启动Nodejs服务常用到的两个工具。使用这两个指令可以使node服务在后台运行，另外它们可以在服务因异常或其他原因被杀掉后进行自动重启。当前项目选用pm2。1npm install -g pm2 MongoDB的安装首先配置yum 1vi /etc/yum.repos.d/mongodb-org-3.0.repo 然后填入内容: 123456[mongodb-org-3.4]name=MongoDB Repositorybaseurl=https://repo.mongodb.org/yum/redhat/$releasever/mongodb-org/3.4/x86_64/gpgcheck=1enabled=1gpgkey=https://www.mongodb.org/static/pgp/server-3.4.asc 最后执行命令进行安装 1yum -y install mongodb-org 手动创建数据文件夹 1mkdir -p /data/db 启动mongod服务 1service mongod start Redis的安装首先检查环境123yum install -y gcc-c++yum install -y tclyum install -y wget 下载redis文件1wget http://download.redis.io/releases/redis-3.2.6.tar.gz 解压并编译123tar xzf redis-3.2.6.tar.gzcd redis-3.2.6make 如果出现错误 jemalloc/jemalloc.h: No such file or directory,则使用下面命令： 1make MALLOC=libc 将编译后的redis-server复制到/usr/bin 1cp src/redis-server /usr/bin/]]></content>
+      <tags>
+        <tag>CentOS Node PM2</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[zookeeper常用命令]]></title>
     <url>%2F2017%2F11%2F03%2Fzookeeper%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4%2F</url>
     <content type="text"><![CDATA[zookeeper 安装目录下有 zkCli工具（windows下 zkCli.cmd, linux 下 zkCli.sh）12./zkCli.sh # 连接本地 zookeeper./zkCli.sh -server 10.1.1.3:2181 # 连接远程zookeeper 以下命令均是在zkCli下输入。 ls查看节点1ls / 输出：1[zookeeper, hhh, xyz] ls2查看节点详细数据1ls2 / 输出：123456789101112[hhh, a, b, zookeeper, dubbo]cZxid = 0x0ctime = Thu Jan 01 08:00:00 CST 1970mZxid = 0x0mtime = Thu Jan 01 08:00:00 CST 1970pZxid = 0x1c0cversion = 9dataVersion = 0aclVersion = 0ephemeralOwner = 0x0dataLength = 0numChildren = 5 节点信息介绍1234567891011cZxid：节点创建时的zxidctime：节点创建时间mZxid： 节点最新一次更新发生时的zxidmtime： 节点最新一次更新发生时间pZxid： 0x198cversion： 其子节点的更新次数dataVersion： 节点数据的更新次数aclVersion： 节点ACL(授权信息)的更新次数ephemeralOwner： 如果该节点为ephemeral节点, ephemeralOwner值表示与该节点绑定的session id. 如果该节点不是ephemeral节点, ephemeralOwner值为0dataLength： 节点数据的字节数numChildren： 子节点个数 create创建节点， 其中-e 代表临时节点 -s代表持久节点 默认是-s。 12create -e /node data # 创建临时节点create -s /node data get获取节点数据 1get /node set更新节点数据 1set /node data delete删除节点 （子节点为空时会删除失败） 1delete /node rmr删除节点 （存在子节点仍能删除成功） 1rmr /node stat获取节点信息 1stat /node sync 12delete /harirmr /hari getAcl获取权限数据 1getAcl /dubbo 输出：12&apos;world,&apos;anyone: cdrwa 简单说ACL 和UGO（User，Group，Other）一样，都是权限控制的方式，acl字段分为 scheme:id:permission上面的权限模式是’world,’，授权对象ID是anyone，权限是cdrwa（create, delete, read, write, admin） setAcl 12345setAcl /node world:anyone:crdwasetAcl /newnode ip:127.0.0.1:crdwaaddauth digest user_abc:pwd_abc # 先添加auth信息setAcl /newnode digest:user_abc:pwd_abc:crdwa setquotasetquota ：设置子节点的个数（-n：子节点个数的限制，-b：数据数据节点数据长度的限制） 1setquota -n 3 /node delquota删除数据节点配额的情况 1delquota /node listquota查看数据节点配额的情况 1listquota /node sync 1sync /aa]]></content>
+      <tags>
+        <tag>zookeeper</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[ubuntu下zookeeper安装]]></title>
+    <url>%2F2017%2F11%2F03%2Fubuntu%E4%B8%8Bzookeeper%E5%AE%89%E8%A3%85%2F</url>
+    <content type="text"><![CDATA[1.下载zookeeper, 并解压123cd /optwget http://mirror.bit.edu.cn/apache/zookeeper/stable/zookeeper-3.4.10.tar.gztar -xvf zookeeper-3.4.10.tar.gz 2.创建数据文件1mkdir -p /data/zookeeper 3.创建配置文件12cd ./confmv zoo_sample.cfg zoo.cfg 4.设置数据文件目录, 更改zoo.cfg中配置：dataDir=/data/zookeeper 5.启动服务12cd ./bin./zkServer.sh start]]></content>
       <tags>
         <tag>zookeeper</tag>
       </tags>
@@ -14,14 +35,6 @@
     <content type="text"><![CDATA[下载 在地址 https://github.com/coreybutler/nvm-windows/releases找最新版本的nvm-setup.zip 下载 安装，一路next。 执行 nvm list available 查看所有可用版本 nvm install xx.xx.xx 安装指定版本 nvm list 查看当前可用版本 nvm use xx.xx.xx 使用指定版本 node –version 确认版本切换成功。 nvm uninstall xx.xx.xx 卸载指定版本]]></content>
       <tags>
         <tag>nvm</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title><![CDATA[ubuntu下zookeeper安装]]></title>
-    <url>%2F2017%2F11%2F03%2Fubuntu%E4%B8%8Bzookeeper%E5%AE%89%E8%A3%85%2F</url>
-    <content type="text"><![CDATA[1.下载zookeeper, 并解压123cd /optwget http://mirror.bit.edu.cn/apache/zookeeper/stable/zookeeper-3.4.10.tar.gztar -xvf zookeeper-3.4.10.tar.gz 2.创建数据文件1mkdir -p /data/zookeeper 3.创建配置文件12cd ./confmv zoo_sample.cfg zoo.cfg 4.设置数据文件目录, 更改zoo.cfg中配置：dataDir=/data/zookeeper 5.启动服务12cd ./bin./zkServer.sh start]]></content>
-      <tags>
-        <tag>zookeeper</tag>
       </tags>
   </entry>
   <entry>

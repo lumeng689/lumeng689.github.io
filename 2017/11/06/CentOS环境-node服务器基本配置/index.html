@@ -3,15 +3,20 @@
 <head>
     <meta charset="utf-8">
     
-    <title>标签: 开发 | Lim&#39;s 博客</title>
+    <title>CentOS环境 node服务器基本配置 | Lim&#39;s 博客</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
-    <meta property="og:type" content="website">
-<meta property="og:title" content="Lim&#39;s 博客">
-<meta property="og:url" content="http://yoursite.com/tags/开发/index.html">
+    <meta name="description" content="node环境安装 执行以下命令： 1curl --silent --location https://rpm.nodesource.com/setup_6.x | bash -  然后执行:  1yum -y install nodejs pm2安装pm2和forever是启动Nodejs服务常用到的两个工具。使用这两个指令可以使node服务在后台运行，另外它们可以在服务因异常或其他原因被杀掉后进">
+<meta name="keywords" content="CentOS Node PM2">
+<meta property="og:type" content="article">
+<meta property="og:title" content="CentOS环境 node服务器基本配置">
+<meta property="og:url" content="http://yoursite.com/2017/11/06/CentOS环境-node服务器基本配置/index.html">
 <meta property="og:site_name" content="Lim&#39;s 博客">
+<meta property="og:description" content="node环境安装 执行以下命令： 1curl --silent --location https://rpm.nodesource.com/setup_6.x | bash -  然后执行:  1yum -y install nodejs pm2安装pm2和forever是启动Nodejs服务常用到的两个工具。使用这两个指令可以使node服务在后台运行，另外它们可以在服务因异常或其他原因被杀掉后进">
 <meta property="og:locale" content="zh-CN">
+<meta property="og:updated_time" content="2017-11-06T03:47:29.608Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Lim&#39;s 博客">
+<meta name="twitter:title" content="CentOS环境 node服务器基本配置">
+<meta name="twitter:description" content="node环境安装 执行以下命令： 1curl --silent --location https://rpm.nodesource.com/setup_6.x | bash -  然后执行:  1yum -y install nodejs pm2安装pm2和forever是启动Nodejs服务常用到的两个工具。使用这两个指令可以使node服务在后台运行，另外它们可以在服务因异常或其他原因被杀掉后进">
     
 
     
@@ -206,45 +211,174 @@
 </aside>
 
             
-            <section id="main">
-<div class="timeline timeline-wrap">
-    <div class="timeline-row timeline-row-major">
-        <span class="node"><i class="fa fa-tag"></i></span>
-        <h1 class="title">#开发</h1>
-    </div>
-    
-        <div class="timeline-row">
-            <span class="node"></span>
-            <div class="content">
+            <section id="main"><article id="post-CentOS环境-node服务器基本配置" class="article article-type-post" itemscope itemprop="blogPost">
+    <div class="article-inner">
+        
+        
+            <header class="article-header">
                 
     
-        <h1 itemprop="name">
-            <a class="timeline-article-title" href="/2017/09/06/解决端口占用问题/">解决端口占用问题</a>
+        <h1 class="article-title" itemprop="name">
+            CentOS环境 node服务器基本配置
         </h1>
     
 
-                <div class="article-meta">
-                    
+                
+                    <div class="article-meta">
+                        
     <div class="article-date">
         <i class="fa fa-calendar"></i>
-        <a href="/2017/09/06/解决端口占用问题/">
-            <time datetime="2017-09-06T09:36:39.257Z" itemprop="datePublished">2017-09-06</time>
+        <a href="/2017/11/06/CentOS环境-node服务器基本配置/">
+            <time datetime="2017-11-06T03:44:10.000Z" itemprop="datePublished">2017-11-06</time>
         </a>
     </div>
 
 
-                    
-                    
+                        
+                        
     <div class="article-tag">
         <i class="fa fa-tag"></i>
-        <a class="tag-link" href="/tags/开发/">开发</a>
+        <a class="tag-link" href="/tags/CentOS-Node-PM2/">CentOS Node PM2</a>
     </div>
 
-                </div>
-            </div>
+                    </div>
+                
+            </header>
+        
+        
+        <div class="article-entry" itemprop="articleBody">
+        
+            
+            <h3 id="node环境安装"><a href="#node环境安装" class="headerlink" title="node环境安装"></a>node环境安装</h3><p> 执行以下命令：<br> <figure class="highlight shell"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">curl --silent --location https://rpm.nodesource.com/setup_6.x | bash -</div></pre></td></tr></table></figure></p>
+<p> 然后执行:<br>  <figure class="highlight shell"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">yum -y install nodejs</div></pre></td></tr></table></figure></p>
+<h3 id="pm2安装"><a href="#pm2安装" class="headerlink" title="pm2安装"></a>pm2安装</h3><p>pm2和forever是启动Nodejs服务常用到的两个工具。使用这两个指令可以使node服务在后台运行，另外它们可以在服务因异常或其他原因被杀掉后进行自动重启。<br>当前项目选用pm2。<br><figure class="highlight shell"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">npm install -g pm2</div></pre></td></tr></table></figure></p>
+<h3 id="MongoDB的安装"><a href="#MongoDB的安装" class="headerlink" title="MongoDB的安装"></a>MongoDB的安装</h3><p>首先配置yum</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">vi  /etc/yum.repos.d/mongodb-org-3.0.repo</div></pre></td></tr></table></figure>
+<p>然后填入内容:</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">[mongodb-org-3.4]</div><div class="line">name=MongoDB Repository</div><div class="line">baseurl=https://repo.mongodb.org/yum/redhat/$releasever/mongodb-org/3.4/x86_64/</div><div class="line">gpgcheck=1</div><div class="line">enabled=1</div><div class="line">gpgkey=https://www.mongodb.org/static/pgp/server-3.4.asc</div></pre></td></tr></table></figure>
+<p>最后执行命令进行安装</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">yum -y install mongodb-org</div></pre></td></tr></table></figure>
+<p>手动创建数据文件夹</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">mkdir -p  /data/db</div></pre></td></tr></table></figure>
+<p>启动mongod服务</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">service mongod start</div></pre></td></tr></table></figure>
+<h3 id="Redis的安装"><a href="#Redis的安装" class="headerlink" title="Redis的安装"></a>Redis的安装</h3><p>首先检查环境<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">yum install -y gcc-c++</div><div class="line">yum install -y tcl</div><div class="line">yum install -y wget</div></pre></td></tr></table></figure></p>
+<p>下载redis文件<br><figure class="highlight shell"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">wget http://download.redis.io/releases/redis-3.2.6.tar.gz</div></pre></td></tr></table></figure></p>
+<p>解压并编译<br><figure class="highlight shell"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">tar xzf redis-3.2.6.tar.gz</div><div class="line">cd redis-3.2.6</div><div class="line">make</div></pre></td></tr></table></figure></p>
+<p>如果出现错误 jemalloc/jemalloc.h: No such file or directory,则使用下面命令：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">make MALLOC=libc</div></pre></td></tr></table></figure>
+<p>将编译后的redis-server复制到/usr/bin</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">cp src/redis-server /usr/bin/</div></pre></td></tr></table></figure>
+
+        
         </div>
-    
+        <footer class="article-footer">
+            <div class="share-container">
+
+
+
 </div>
+
+    <a data-url="http://yoursite.com/2017/11/06/CentOS环境-node服务器基本配置/" data-id="cj9nnhuss00004gj6ceyleg7p" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
+<script>
+    (function ($) {
+        // Prevent duplicate binding
+        if (typeof(__SHARE_BUTTON_BINDED__) === 'undefined' || !__SHARE_BUTTON_BINDED__) {
+            __SHARE_BUTTON_BINDED__ = true;
+        } else {
+            return;
+        }
+        $('body').on('click', function() {
+            $('.article-share-box.on').removeClass('on');
+        }).on('click', '.article-share-link', function(e) {
+            e.stopPropagation();
+
+            var $this = $(this),
+                url = $this.attr('data-url'),
+                encodedUrl = encodeURIComponent(url),
+                id = 'article-share-box-' + $this.attr('data-id'),
+                offset = $this.offset(),
+                box;
+
+            if ($('#' + id).length) {
+                box = $('#' + id);
+
+                if (box.hasClass('on')){
+                    box.removeClass('on');
+                    return;
+                }
+            } else {
+                var html = [
+                    '<div id="' + id + '" class="article-share-box">',
+                        '<input class="article-share-input" value="' + url + '">',
+                        '<div class="article-share-links">',
+                            '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="fa fa-twitter article-share-twitter" target="_blank" title="Twitter"></a>',
+                            '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="fa fa-facebook article-share-facebook" target="_blank" title="Facebook"></a>',
+                            '<a href="http://pinterest.com/pin/create/button/?url=' + encodedUrl + '" class="fa fa-pinterest article-share-pinterest" target="_blank" title="Pinterest"></a>',
+                            '<a href="https://plus.google.com/share?url=' + encodedUrl + '" class="fa fa-google article-share-google" target="_blank" title="Google+"></a>',
+                        '</div>',
+                    '</div>'
+                ].join('');
+
+              box = $(html);
+
+              $('body').append(box);
+            }
+
+            $('.article-share-box.on').hide();
+
+            box.css({
+                top: offset.top + 25,
+                left: offset.left
+            }).addClass('on');
+
+        }).on('click', '.article-share-box', function (e) {
+            e.stopPropagation();
+        }).on('click', '.article-share-box-input', function () {
+            $(this).select();
+        }).on('click', '.article-share-box-link', function (e) {
+            e.preventDefault();
+            e.stopPropagation();
+
+            window.open(this.href, 'article-share-box-window-' + Date.now(), 'width=500,height=450');
+        });
+    })(jQuery);
+</script>
+
+            
+    
+
+        </footer>
+    </div>
+    
+        
+<nav id="article-nav">
+    
+        <a href="/2017/11/06/Ubuntu服务器-node服务器基本配置/" id="article-nav-newer" class="article-nav-link-wrap">
+            <strong class="article-nav-caption">上一篇</strong>
+            <div class="article-nav-title">
+                
+                    Ubuntu服务器 node服务器基本配置
+                
+            </div>
+        </a>
+    
+    
+        <a href="/2017/11/03/zookeeper常用命令/" id="article-nav-older" class="article-nav-link-wrap">
+            <strong class="article-nav-caption">下一篇</strong>
+            <div class="article-nav-title">zookeeper常用命令</div>
+        </a>
+    
+</nav>
+
+
+    
+</article>
+
+
+    
+    
+
 </section>
             
                 
