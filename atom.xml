@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2018-09-28T04:05:23.023Z</updated>
+  <updated>2018-09-28T06:55:04.551Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -14,6 +14,28 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>bezierEasingMixin被禁用问题的解决</title>
+    <link href="http://yoursite.com/2018/09/28/bezierEasingMixin%E8%A2%AB%E7%A6%81%E7%94%A8%E9%97%AE%E9%A2%98%E7%9A%84%E8%A7%A3%E5%86%B3/"/>
+    <id>http://yoursite.com/2018/09/28/bezierEasingMixin被禁用问题的解决/</id>
+    <published>2018-09-28T06:53:41.000Z</published>
+    <updated>2018-09-28T06:55:04.551Z</updated>
+    
+    <content type="html"><![CDATA[<p>在 node_modules\@angular-devkit\build-angular\src\angular-cli-files\models\webpack-configs\styles.js line 136和142行<br>（由于版本不一样文件的位置也不一样），lessPathOptions这个对象，加入属性lessPathOptions.javascriptEnabled = true。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">let lessPathOptions = &#123; paths: [], javascriptEnabled: true&#125;;</div><div class="line">   if (......);</div><div class="line">       lessPathOptions = &#123;</div><div class="line">           paths: includePaths,</div><div class="line">           javascriptEnabled: true</div><div class="line">       &#125;;</div><div class="line">   &#125;</div></pre></td></tr></table></figure>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;在 node_modules\@angular-devkit\build-angular\src\angular-cli-files\models\webpack-configs\styles.js line 136和142行&lt;br&gt;（由于版本不一样文件的位置也不一样），l
+    
+    </summary>
+    
+    
+      <category term="Angular, LESS" scheme="http://yoursite.com/tags/Angular-LESS/"/>
+    
+  </entry>
   
   <entry>
     <title>logback 配置</title>
@@ -467,7 +489,7 @@
 <p>重启nginx<br><figure class="highlight shell"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">nginx -s reload</div></pre></td></tr></table></figure></p>
 <p> 或者<br><figure class="highlight shell"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">service nginx restart</div></pre></td></tr></table></figure></p>
 <p>CentOS7需要关闭selinux功能,否则端口转发时会出错<br>编辑selinux文件<br><figure class="highlight shell"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">/etc/sysconfig/selinux</div></pre></td></tr></table></figure></p>
-<p>注释掉下面代码<br><figure class="highlight shell"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="meta">#</span>SELINUX=enforcing</div></pre></td></tr></table></figure></p>
+<p>注释掉下面代码<br><figure class="highlight shell"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="meta">#</span><span class="bash">SELINUX=enforcing</span></div></pre></td></tr></table></figure></p>
 <p>将此行代码取消注释,修改后为:<br><figure class="highlight shell"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">SELINUX=disabled</div></pre></td></tr></table></figure></p>
 <p>设置 SELinux 状态<br><figure class="highlight shell"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">setenforce 0</div></pre></td></tr></table></figure></p>
 <p>执行命令,获取SELinux状态</p>
