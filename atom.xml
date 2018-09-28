@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2018-09-28T04:02:07.238Z</updated>
+  <updated>2018-09-28T04:05:23.023Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -20,7 +20,7 @@
     <link href="http://yoursite.com/2018/09/28/logback-%E9%85%8D%E7%BD%AE/"/>
     <id>http://yoursite.com/2018/09/28/logback-配置/</id>
     <published>2018-09-28T04:01:00.000Z</published>
-    <updated>2018-09-28T04:02:07.238Z</updated>
+    <updated>2018-09-28T04:05:23.023Z</updated>
     
     <content type="html"><![CDATA[<p>摘抄： <a href="https://juejin.im/post/5a1f86f0f265da4326529c61" target="_blank" rel="external">https://juejin.im/post/5a1f86f0f265da4326529c61</a></p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div><div class="line">67</div><div class="line">68</div><div class="line">69</div><div class="line">70</div><div class="line">71</div><div class="line">72</div><div class="line">73</div><div class="line">74</div><div class="line">75</div><div class="line">76</div><div class="line">77</div><div class="line">78</div><div class="line">79</div><div class="line">80</div><div class="line">81</div><div class="line">82</div><div class="line">83</div><div class="line">84</div><div class="line">85</div><div class="line">86</div><div class="line">87</div><div class="line">88</div><div class="line">89</div><div class="line">90</div><div class="line">91</div><div class="line">92</div><div class="line">93</div><div class="line">94</div><div class="line">95</div><div class="line">96</div><div class="line">97</div><div class="line">98</div><div class="line">99</div><div class="line">100</div><div class="line">101</div><div class="line">102</div><div class="line">103</div><div class="line">104</div><div class="line">105</div><div class="line">106</div><div class="line">107</div><div class="line">108</div><div class="line">109</div><div class="line">110</div><div class="line">111</div><div class="line">112</div><div class="line">113</div><div class="line">114</div><div class="line">115</div><div class="line">116</div><div class="line">117</div><div class="line">118</div><div class="line">119</div><div class="line">120</div><div class="line">121</div><div class="line">122</div><div class="line">123</div></pre></td><td class="code"><pre><div class="line">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;</div><div class="line">&lt;configuration&gt;</div><div class="line"></div><div class="line">    &lt;!-- 日志根目录--&gt;</div><div class="line">    &lt;springProperty scope=&quot;context&quot; name=&quot;LOG_HOME&quot; source=&quot;logging.path&quot; defaultValue=&quot;/data/logs/spring-boot-logback&quot;/&gt;</div><div class="line"></div><div class="line">    &lt;!-- 日志级别 --&gt;</div><div class="line">    &lt;springProperty scope=&quot;context&quot; name=&quot;LOG_ROOT_LEVEL&quot; source=&quot;logging.level.root&quot; defaultValue=&quot;DEBUG&quot;/&gt;</div><div class="line"></div><div class="line">    &lt;!--  标识这个&quot;STDOUT&quot; 将会添加到这个logger --&gt;</div><div class="line">    &lt;springProperty scope=&quot;context&quot; name=&quot;STDOUT&quot; source=&quot;log.stdout&quot; defaultValue=&quot;STDOUT&quot;/&gt;</div><div class="line"></div><div class="line">    &lt;!-- 日志文件名称--&gt;</div><div class="line">    &lt;property name=&quot;LOG_PREFIX&quot; value=&quot;spring-boot-logback&quot; /&gt;</div><div class="line"></div><div class="line">    &lt;!-- 日志文件编码--&gt;</div><div class="line">    &lt;property name=&quot;LOG_CHARSET&quot; value=&quot;UTF-8&quot; /&gt;</div><div class="line"></div><div class="line">    &lt;!-- 日志文件路径+日期--&gt;</div><div class="line">    &lt;property name=&quot;LOG_DIR&quot; value=&quot;$&#123;LOG_HOME&#125;/%d&#123;yyyyMMdd&#125;&quot; /&gt;</div><div class="line"></div><div class="line">    &lt;!--对日志进行格式化--&gt;</div><div class="line">    &lt;property name=&quot;LOG_MSG&quot; value=&quot;- | [%X&#123;requestUUID&#125;] | [%d&#123;yyyyMMdd HH:mm:ss.SSS&#125;] | [%level] | [$&#123;HOSTNAME&#125;] | [%thread] | [%logger&#123;36&#125;] | --&gt; %msg|%n &quot;/&gt;</div><div class="line"></div><div class="line">    &lt;!--文件大小，默认10MB--&gt;</div><div class="line">    &lt;property name=&quot;MAX_FILE_SIZE&quot; value=&quot;50MB&quot; /&gt;</div><div class="line"></div><div class="line">    &lt;!-- 配置日志的滚动时间 ，表示只保留最近 10 天的日志--&gt;</div><div class="line">    &lt;property name=&quot;MAX_HISTORY&quot; value=&quot;10&quot;/&gt;</div><div class="line"></div><div class="line">    &lt;!--输出到控制台--&gt;</div><div class="line">    &lt;appender name=&quot;STDOUT&quot; class=&quot;ch.qos.logback.core.ConsoleAppender&quot;&gt;</div><div class="line">        &lt;!-- 输出的日志内容格式化--&gt;</div><div class="line">        &lt;layout class=&quot;ch.qos.logback.classic.PatternLayout&quot;&gt;</div><div class="line">            &lt;pattern&gt;$&#123;LOG_MSG&#125;&lt;/pattern&gt;</div><div class="line">        &lt;/layout&gt;</div><div class="line">    &lt;/appender&gt;</div><div class="line"></div><div class="line">    &lt;!--输出到文件--&gt;</div><div class="line">    &lt;appender name=&quot;0&quot; class=&quot;ch.qos.logback.core.rolling.RollingFileAppender&quot;&gt;</div><div class="line">    &lt;/appender&gt;</div><div class="line"></div><div class="line">    &lt;!-- 定义 ALL 日志的输出方式:--&gt;</div><div class="line">    &lt;appender name=&quot;FILE_ALL&quot; class=&quot;ch.qos.logback.core.rolling.RollingFileAppender&quot;&gt;</div><div class="line">        &lt;!--日志文件路径，日志文件名称--&gt;</div><div class="line">        &lt;File&gt;$&#123;LOG_HOME&#125;/all_$&#123;LOG_PREFIX&#125;.log&lt;/File&gt;</div><div class="line"></div><div class="line">        &lt;!-- 设置滚动策略，当天的日志大小超过 $&#123;MAX_FILE_SIZE&#125; 文件大小时候，新的内容写入新的文件， 默认10MB --&gt;</div><div class="line">        &lt;rollingPolicy class=&quot;ch.qos.logback.core.rolling.TimeBasedRollingPolicy&quot;&gt;</div><div class="line"></div><div class="line">            &lt;!--日志文件路径，新的 ALL 日志文件名称，“ i ” 是个变量 --&gt;</div><div class="line">            &lt;FileNamePattern&gt;$&#123;LOG_DIR&#125;/all_$&#123;LOG_PREFIX&#125;%i.log&lt;/FileNamePattern&gt;</div><div class="line"></div><div class="line">            &lt;!-- 配置日志的滚动时间 ，表示只保留最近 10 天的日志--&gt;</div><div class="line">            &lt;MaxHistory&gt;$&#123;MAX_HISTORY&#125;&lt;/MaxHistory&gt;</div><div class="line"></div><div class="line">            &lt;!--当天的日志大小超过 $&#123;MAX_FILE_SIZE&#125; 文件大小时候，新的内容写入新的文件， 默认10MB--&gt;</div><div class="line">            &lt;timeBasedFileNamingAndTriggeringPolicy class=&quot;ch.qos.logback.core.rolling.SizeAndTimeBasedFNATP&quot;&gt;</div><div class="line">                &lt;maxFileSize&gt;$&#123;MAX_FILE_SIZE&#125;&lt;/maxFileSize&gt;</div><div class="line">            &lt;/timeBasedFileNamingAndTriggeringPolicy&gt;</div><div class="line"></div><div class="line">        &lt;/rollingPolicy&gt;</div><div class="line"></div><div class="line">        &lt;!-- 输出的日志内容格式化--&gt;</div><div class="line">        &lt;layout class=&quot;ch.qos.logback.classic.PatternLayout&quot;&gt;</div><div class="line">            &lt;pattern&gt;$&#123;LOG_MSG&#125;&lt;/pattern&gt;</div><div class="line">        &lt;/layout&gt;</div><div class="line">    &lt;/appender&gt;</div><div class="line"></div><div class="line">    &lt;!-- 定义 ERROR 日志的输出方式:--&gt;</div><div class="line">    &lt;appender name=&quot;FILE_ERROR&quot; class=&quot;ch.qos.logback.core.rolling.RollingFileAppender&quot;&gt;</div><div class="line">        &lt;!-- 下面为配置只输出error级别的日志 --&gt;</div><div class="line">        &lt;filter class=&quot;ch.qos.logback.classic.filter.LevelFilter&quot;&gt;</div><div class="line">            &lt;level&gt;ERROR&lt;/level&gt;</div><div class="line">            &lt;OnMismatch&gt;DENY&lt;/OnMismatch&gt;</div><div class="line">            &lt;OnMatch&gt;ACCEPT&lt;/OnMatch&gt;</div><div class="line">        &lt;/filter&gt;</div><div class="line">        &lt;!--日志文件路径，日志文件名称--&gt;</div><div class="line">        &lt;File&gt;$&#123;LOG_HOME&#125;/err_$&#123;LOG_PREFIX&#125;.log&lt;/File&gt;</div><div class="line"></div><div class="line">        &lt;!-- 设置滚动策略，当天的日志大小超过 $&#123;MAX_FILE_SIZE&#125; 文件大小时候，新的内容写入新的文件， 默认10MB --&gt;</div><div class="line">        &lt;rollingPolicy class=&quot;ch.qos.logback.core.rolling.TimeBasedRollingPolicy&quot;&gt;</div><div class="line"></div><div class="line">            &lt;!--日志文件路径，新的 ERR 日志文件名称，“ i ” 是个变量 --&gt;</div><div class="line">            &lt;FileNamePattern&gt;$&#123;LOG_DIR&#125;/err_$&#123;LOG_PREFIX&#125;%i.log&lt;/FileNamePattern&gt;</div><div class="line"></div><div class="line">            &lt;!-- 配置日志的滚动时间 ，表示只保留最近 10 天的日志--&gt;</div><div class="line">            &lt;MaxHistory&gt;$&#123;MAX_HISTORY&#125;&lt;/MaxHistory&gt;</div><div class="line"></div><div class="line">            &lt;!--当天的日志大小超过 $&#123;MAX_FILE_SIZE&#125; 文件大小时候，新的内容写入新的文件， 默认10MB--&gt;</div><div class="line">            &lt;timeBasedFileNamingAndTriggeringPolicy class=&quot;ch.qos.logback.core.rolling.SizeAndTimeBasedFNATP&quot;&gt;</div><div class="line">                &lt;maxFileSize&gt;$&#123;MAX_FILE_SIZE&#125;&lt;/maxFileSize&gt;</div><div class="line">            &lt;/timeBasedFileNamingAndTriggeringPolicy&gt;</div><div class="line">        &lt;/rollingPolicy&gt;</div><div class="line"></div><div class="line">        &lt;!-- 输出的日志内容格式化--&gt;</div><div class="line">        &lt;layout class=&quot;ch.qos.logback.classic.PatternLayout&quot;&gt;</div><div class="line">            &lt;Pattern&gt;$&#123;LOG_MSG&#125;&lt;/Pattern&gt;</div><div class="line">        &lt;/layout&gt;</div><div class="line">    &lt;/appender&gt;</div><div class="line"></div><div class="line">    &lt;!-- additivity 设为false,则logger内容不附加至root ，配置以配置包下的所有类的日志的打印，级别是 ERROR--&gt;</div><div class="line"></div><div class="line">    &lt;logger name=&quot;org.springframework&quot;     level=&quot;ERROR&quot; /&gt;</div><div class="line">    &lt;logger name=&quot;org.apache.commons&quot;      level=&quot;ERROR&quot; /&gt;</div><div class="line">    &lt;logger name=&quot;org.apache.zookeeper&quot;    level=&quot;ERROR&quot;  /&gt;</div><div class="line">    &lt;logger name=&quot;com.alibaba.dubbo.monitor&quot; level=&quot;ERROR&quot;/&gt;</div><div class="line">    &lt;logger name=&quot;com.alibaba.dubbo.remoting&quot; level=&quot;ERROR&quot; /&gt;</div><div class="line"></div><div class="line">    &lt;!-- $&#123;LOG_ROOT_LEVEL&#125; 日志级别 --&gt;</div><div class="line">    &lt;root level=&quot;$&#123;LOG_ROOT_LEVEL&#125;&quot;&gt;</div><div class="line"></div><div class="line">        &lt;!-- 标识这个&quot;$&#123;STDOUT&#125;&quot;将会添加到这个logger --&gt;</div><div class="line">        &lt;appender-ref ref=&quot;$&#123;STDOUT&#125;&quot;/&gt;</div><div class="line"></div><div class="line">        &lt;!-- FILE_ALL 日志输出添加到 logger --&gt;</div><div class="line">        &lt;appender-ref ref=&quot;FILE_ALL&quot;/&gt;</div><div class="line"></div><div class="line">        &lt;!-- FILE_ERROR 日志输出添加到 logger --&gt;</div><div class="line">        &lt;appender-ref ref=&quot;FILE_ERROR&quot;/&gt;</div><div class="line">    &lt;/root&gt;</div><div class="line"></div><div class="line">&lt;/configuration&gt;</div></pre></td></tr></table></figure>]]></content>
@@ -31,6 +31,8 @@
     
     </summary>
     
+    
+      <category term="Spring boot, logback" scheme="http://yoursite.com/tags/Spring-boot-logback/"/>
     
   </entry>
   
@@ -249,6 +251,31 @@
   </entry>
   
   <entry>
+    <title>ubuntu下zookeeper安装</title>
+    <link href="http://yoursite.com/2017/11/03/ubuntu%E4%B8%8Bzookeeper%E5%AE%89%E8%A3%85/"/>
+    <id>http://yoursite.com/2017/11/03/ubuntu下zookeeper安装/</id>
+    <published>2017-11-03T10:09:16.000Z</published>
+    <updated>2017-11-03T10:20:11.964Z</updated>
+    
+    <content type="html"><![CDATA[<p>1.下载zookeeper, 并解压<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">cd</span> /opt</div><div class="line">wget http://mirror.bit.edu.cn/apache/zookeeper/stable/zookeeper-3.4.10.tar.gz</div><div class="line">tar -xvf zookeeper-3.4.10.tar.gz</div></pre></td></tr></table></figure></p>
+<p>2.创建数据文件<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">mkdir -p /data/zookeeper</div></pre></td></tr></table></figure></p>
+<p>3.创建配置文件<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">cd</span> ./conf</div><div class="line">mv zoo_sample.cfg  zoo.cfg</div></pre></td></tr></table></figure></p>
+<p>4.设置数据文件目录, 更改zoo.cfg中配置：dataDir=/data/zookeeper </p>
+<p>5.启动服务<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">cd ./bin</div><div class="line">./zkServer.sh start</div></pre></td></tr></table></figure></p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;1.下载zookeeper, 并解压&lt;br&gt;&lt;figure class=&quot;highlight bash&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;2&lt;/div
+    
+    </summary>
+    
+    
+      <category term="zookeeper" scheme="http://yoursite.com/tags/zookeeper/"/>
+    
+  </entry>
+  
+  <entry>
     <title>nvm教程</title>
     <link href="http://yoursite.com/2017/11/03/nvm%E6%95%99%E7%A8%8B/"/>
     <id>http://yoursite.com/2017/11/03/nvm教程/</id>
@@ -284,31 +311,6 @@
     
     
       <category term="nvm" scheme="http://yoursite.com/tags/nvm/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>ubuntu下zookeeper安装</title>
-    <link href="http://yoursite.com/2017/11/03/ubuntu%E4%B8%8Bzookeeper%E5%AE%89%E8%A3%85/"/>
-    <id>http://yoursite.com/2017/11/03/ubuntu下zookeeper安装/</id>
-    <published>2017-11-03T10:09:16.000Z</published>
-    <updated>2017-11-03T10:20:11.964Z</updated>
-    
-    <content type="html"><![CDATA[<p>1.下载zookeeper, 并解压<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">cd</span> /opt</div><div class="line">wget http://mirror.bit.edu.cn/apache/zookeeper/stable/zookeeper-3.4.10.tar.gz</div><div class="line">tar -xvf zookeeper-3.4.10.tar.gz</div></pre></td></tr></table></figure></p>
-<p>2.创建数据文件<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">mkdir -p /data/zookeeper</div></pre></td></tr></table></figure></p>
-<p>3.创建配置文件<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">cd</span> ./conf</div><div class="line">mv zoo_sample.cfg  zoo.cfg</div></pre></td></tr></table></figure></p>
-<p>4.设置数据文件目录, 更改zoo.cfg中配置：dataDir=/data/zookeeper </p>
-<p>5.启动服务<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">cd ./bin</div><div class="line">./zkServer.sh start</div></pre></td></tr></table></figure></p>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;1.下载zookeeper, 并解压&lt;br&gt;&lt;figure class=&quot;highlight bash&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;2&lt;/div
-    
-    </summary>
-    
-    
-      <category term="zookeeper" scheme="http://yoursite.com/tags/zookeeper/"/>
     
   </entry>
   
@@ -465,7 +467,7 @@
 <p>重启nginx<br><figure class="highlight shell"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">nginx -s reload</div></pre></td></tr></table></figure></p>
 <p> 或者<br><figure class="highlight shell"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">service nginx restart</div></pre></td></tr></table></figure></p>
 <p>CentOS7需要关闭selinux功能,否则端口转发时会出错<br>编辑selinux文件<br><figure class="highlight shell"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">/etc/sysconfig/selinux</div></pre></td></tr></table></figure></p>
-<p>注释掉下面代码<br><figure class="highlight shell"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="meta">#</span><span class="bash">SELINUX=enforcing</span></div></pre></td></tr></table></figure></p>
+<p>注释掉下面代码<br><figure class="highlight shell"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="meta">#</span>SELINUX=enforcing</div></pre></td></tr></table></figure></p>
 <p>将此行代码取消注释,修改后为:<br><figure class="highlight shell"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">SELINUX=disabled</div></pre></td></tr></table></figure></p>
 <p>设置 SELinux 状态<br><figure class="highlight shell"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">setenforce 0</div></pre></td></tr></table></figure></p>
 <p>执行命令,获取SELinux状态</p>

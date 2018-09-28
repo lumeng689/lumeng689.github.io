@@ -158,7 +158,7 @@
                 <span>文章</span>
             </div>
             <div class="article-info-block">
-                9
+                10
                 <span>标签</span>
             </div>
         </div>
@@ -232,6 +232,11 @@
 
                         
                         
+    <div class="article-tag">
+        <i class="fa fa-tag"></i>
+        <a class="tag-link" href="/tags/Spring-boot-logback/">Spring boot, logback</a>
+    </div>
+
                     </div>
                 
             </header>
@@ -251,7 +256,7 @@
 
 </div>
 
-    <a data-url="http://yoursite.com/2018/09/28/logback-配置/" data-id="cjmlhe6gc000cvotzx0yb5vft" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
+    <a data-url="http://yoursite.com/2018/09/28/logback-配置/" data-id="cjmlhib8v000gkwtzt6wiyaxb" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
 <script>
     (function ($) {
         // Prevent duplicate binding
@@ -434,7 +439,7 @@
 
 </div>
 
-    <a data-url="http://yoursite.com/2017/11/06/Ubuntu服务器-node服务器基本配置/" data-id="cjmlhe6gq000tvotzs789akae" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
+    <a data-url="http://yoursite.com/2017/11/06/Ubuntu服务器-node服务器基本配置/" data-id="cjmlhib8t000dkwtzo0vssqjc" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
 <script>
     (function ($) {
         // Prevent duplicate binding
@@ -592,7 +597,7 @@
 
 </div>
 
-    <a data-url="http://yoursite.com/2017/11/06/CentOS环境-node服务器基本配置/" data-id="cjmlhe6go000svotzj5lmvake" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
+    <a data-url="http://yoursite.com/2017/11/06/CentOS环境-node服务器基本配置/" data-id="cjmlhib8e0002kwtzmn12rn3a" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
 <script>
     (function ($) {
         // Prevent duplicate binding
@@ -774,7 +779,136 @@
 
 </div>
 
-    <a data-url="http://yoursite.com/2017/11/03/zookeeper常用命令/" data-id="cjmlhe6gm000pvotz81nuueoz" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
+    <a data-url="http://yoursite.com/2017/11/03/zookeeper常用命令/" data-id="cjmlhib94000tkwtzy2ziyd51" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
+<script>
+    (function ($) {
+        // Prevent duplicate binding
+        if (typeof(__SHARE_BUTTON_BINDED__) === 'undefined' || !__SHARE_BUTTON_BINDED__) {
+            __SHARE_BUTTON_BINDED__ = true;
+        } else {
+            return;
+        }
+        $('body').on('click', function() {
+            $('.article-share-box.on').removeClass('on');
+        }).on('click', '.article-share-link', function(e) {
+            e.stopPropagation();
+
+            var $this = $(this),
+                url = $this.attr('data-url'),
+                encodedUrl = encodeURIComponent(url),
+                id = 'article-share-box-' + $this.attr('data-id'),
+                offset = $this.offset(),
+                box;
+
+            if ($('#' + id).length) {
+                box = $('#' + id);
+
+                if (box.hasClass('on')){
+                    box.removeClass('on');
+                    return;
+                }
+            } else {
+                var html = [
+                    '<div id="' + id + '" class="article-share-box">',
+                        '<input class="article-share-input" value="' + url + '">',
+                        '<div class="article-share-links">',
+                            '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="fa fa-twitter article-share-twitter" target="_blank" title="Twitter"></a>',
+                            '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="fa fa-facebook article-share-facebook" target="_blank" title="Facebook"></a>',
+                            '<a href="http://pinterest.com/pin/create/button/?url=' + encodedUrl + '" class="fa fa-pinterest article-share-pinterest" target="_blank" title="Pinterest"></a>',
+                            '<a href="https://plus.google.com/share?url=' + encodedUrl + '" class="fa fa-google article-share-google" target="_blank" title="Google+"></a>',
+                        '</div>',
+                    '</div>'
+                ].join('');
+
+              box = $(html);
+
+              $('body').append(box);
+            }
+
+            $('.article-share-box.on').hide();
+
+            box.css({
+                top: offset.top + 25,
+                left: offset.left
+            }).addClass('on');
+
+        }).on('click', '.article-share-box', function (e) {
+            e.stopPropagation();
+        }).on('click', '.article-share-box-input', function () {
+            $(this).select();
+        }).on('click', '.article-share-box-link', function (e) {
+            e.preventDefault();
+            e.stopPropagation();
+
+            window.open(this.href, 'article-share-box-window-' + Date.now(), 'width=500,height=450');
+        });
+    })(jQuery);
+</script>
+
+            
+    
+
+        </footer>
+    </div>
+    
+</article>
+
+
+
+    <article id="post-ubuntu下zookeeper安装" class="article article-type-post" itemscope itemprop="blogPost">
+    <div class="article-inner">
+        
+        
+            <header class="article-header">
+                
+    
+        <h1 itemprop="name">
+            <a class="article-title" href="/2017/11/03/ubuntu下zookeeper安装/">ubuntu下zookeeper安装</a>
+        </h1>
+    
+
+                
+                    <div class="article-meta">
+                        
+    <div class="article-date">
+        <i class="fa fa-calendar"></i>
+        <a href="/2017/11/03/ubuntu下zookeeper安装/">
+            <time datetime="2017-11-03T10:09:16.000Z" itemprop="datePublished">2017-11-03</time>
+        </a>
+    </div>
+
+
+                        
+                        
+    <div class="article-tag">
+        <i class="fa fa-tag"></i>
+        <a class="tag-link" href="/tags/zookeeper/">zookeeper</a>
+    </div>
+
+                    </div>
+                
+            </header>
+        
+        
+        <div class="article-entry" itemprop="articleBody">
+        
+            
+            <p>1.下载zookeeper, 并解压<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">cd</span> /opt</div><div class="line">wget http://mirror.bit.edu.cn/apache/zookeeper/stable/zookeeper-3.4.10.tar.gz</div><div class="line">tar -xvf zookeeper-3.4.10.tar.gz</div></pre></td></tr></table></figure></p>
+<p>2.创建数据文件<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">mkdir -p /data/zookeeper</div></pre></td></tr></table></figure></p>
+<p>3.创建配置文件<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">cd</span> ./conf</div><div class="line">mv zoo_sample.cfg  zoo.cfg</div></pre></td></tr></table></figure></p>
+<p>4.设置数据文件目录, 更改zoo.cfg中配置：dataDir=/data/zookeeper </p>
+<p>5.启动服务<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">cd ./bin</div><div class="line">./zkServer.sh start</div></pre></td></tr></table></figure></p>
+
+        
+        </div>
+        <footer class="article-footer">
+            <div class="share-container">
+
+
+
+</div>
+
+    <a data-url="http://yoursite.com/2017/11/03/ubuntu下zookeeper安装/" data-id="cjmlhib91000pkwtz3gqkbkol" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
 <script>
     (function ($) {
         // Prevent duplicate binding
@@ -916,136 +1050,7 @@
 
 </div>
 
-    <a data-url="http://yoursite.com/2017/11/03/nvm教程/" data-id="cjmlhe6gi000kvotzcfaehydx" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
-<script>
-    (function ($) {
-        // Prevent duplicate binding
-        if (typeof(__SHARE_BUTTON_BINDED__) === 'undefined' || !__SHARE_BUTTON_BINDED__) {
-            __SHARE_BUTTON_BINDED__ = true;
-        } else {
-            return;
-        }
-        $('body').on('click', function() {
-            $('.article-share-box.on').removeClass('on');
-        }).on('click', '.article-share-link', function(e) {
-            e.stopPropagation();
-
-            var $this = $(this),
-                url = $this.attr('data-url'),
-                encodedUrl = encodeURIComponent(url),
-                id = 'article-share-box-' + $this.attr('data-id'),
-                offset = $this.offset(),
-                box;
-
-            if ($('#' + id).length) {
-                box = $('#' + id);
-
-                if (box.hasClass('on')){
-                    box.removeClass('on');
-                    return;
-                }
-            } else {
-                var html = [
-                    '<div id="' + id + '" class="article-share-box">',
-                        '<input class="article-share-input" value="' + url + '">',
-                        '<div class="article-share-links">',
-                            '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="fa fa-twitter article-share-twitter" target="_blank" title="Twitter"></a>',
-                            '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="fa fa-facebook article-share-facebook" target="_blank" title="Facebook"></a>',
-                            '<a href="http://pinterest.com/pin/create/button/?url=' + encodedUrl + '" class="fa fa-pinterest article-share-pinterest" target="_blank" title="Pinterest"></a>',
-                            '<a href="https://plus.google.com/share?url=' + encodedUrl + '" class="fa fa-google article-share-google" target="_blank" title="Google+"></a>',
-                        '</div>',
-                    '</div>'
-                ].join('');
-
-              box = $(html);
-
-              $('body').append(box);
-            }
-
-            $('.article-share-box.on').hide();
-
-            box.css({
-                top: offset.top + 25,
-                left: offset.left
-            }).addClass('on');
-
-        }).on('click', '.article-share-box', function (e) {
-            e.stopPropagation();
-        }).on('click', '.article-share-box-input', function () {
-            $(this).select();
-        }).on('click', '.article-share-box-link', function (e) {
-            e.preventDefault();
-            e.stopPropagation();
-
-            window.open(this.href, 'article-share-box-window-' + Date.now(), 'width=500,height=450');
-        });
-    })(jQuery);
-</script>
-
-            
-    
-
-        </footer>
-    </div>
-    
-</article>
-
-
-
-    <article id="post-ubuntu下zookeeper安装" class="article article-type-post" itemscope itemprop="blogPost">
-    <div class="article-inner">
-        
-        
-            <header class="article-header">
-                
-    
-        <h1 itemprop="name">
-            <a class="article-title" href="/2017/11/03/ubuntu下zookeeper安装/">ubuntu下zookeeper安装</a>
-        </h1>
-    
-
-                
-                    <div class="article-meta">
-                        
-    <div class="article-date">
-        <i class="fa fa-calendar"></i>
-        <a href="/2017/11/03/ubuntu下zookeeper安装/">
-            <time datetime="2017-11-03T10:09:16.000Z" itemprop="datePublished">2017-11-03</time>
-        </a>
-    </div>
-
-
-                        
-                        
-    <div class="article-tag">
-        <i class="fa fa-tag"></i>
-        <a class="tag-link" href="/tags/zookeeper/">zookeeper</a>
-    </div>
-
-                    </div>
-                
-            </header>
-        
-        
-        <div class="article-entry" itemprop="articleBody">
-        
-            
-            <p>1.下载zookeeper, 并解压<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">cd</span> /opt</div><div class="line">wget http://mirror.bit.edu.cn/apache/zookeeper/stable/zookeeper-3.4.10.tar.gz</div><div class="line">tar -xvf zookeeper-3.4.10.tar.gz</div></pre></td></tr></table></figure></p>
-<p>2.创建数据文件<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">mkdir -p /data/zookeeper</div></pre></td></tr></table></figure></p>
-<p>3.创建配置文件<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">cd</span> ./conf</div><div class="line">mv zoo_sample.cfg  zoo.cfg</div></pre></td></tr></table></figure></p>
-<p>4.设置数据文件目录, 更改zoo.cfg中配置：dataDir=/data/zookeeper </p>
-<p>5.启动服务<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">cd ./bin</div><div class="line">./zkServer.sh start</div></pre></td></tr></table></figure></p>
-
-        
-        </div>
-        <footer class="article-footer">
-            <div class="share-container">
-
-
-
-</div>
-
-    <a data-url="http://yoursite.com/2017/11/03/ubuntu下zookeeper安装/" data-id="cjmlhe6gh000ivotzx909pqah" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
+    <a data-url="http://yoursite.com/2017/11/03/nvm教程/" data-id="cjmlhib8y000lkwtz817z0q1a" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
 <script>
     (function ($) {
         // Prevent duplicate binding
@@ -1196,7 +1201,7 @@
 
 </div>
 
-    <a data-url="http://yoursite.com/2017/09/18/Express项目安全建议/" data-id="cjmlhe6gj000mvotzkseafyrl" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
+    <a data-url="http://yoursite.com/2017/09/18/Express项目安全建议/" data-id="cjmlhib8m0006kwtzk9mb0ajn" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
 <script>
     (function ($) {
         // Prevent duplicate binding
@@ -1380,7 +1385,7 @@
 
 </div>
 
-    <a data-url="http://yoursite.com/2017/09/18/Node项目ubuntu环境搭建简介/" data-id="cjmlhe6g80008votznp2dmyji" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
+    <a data-url="http://yoursite.com/2017/09/18/Node项目ubuntu环境搭建简介/" data-id="cjmlhib8p0008kwtzyn8nzrya" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
 <script>
     (function ($) {
         // Prevent duplicate binding
@@ -1502,7 +1507,7 @@
 <p>重启nginx<br><figure class="highlight shell"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">nginx -s reload</div></pre></td></tr></table></figure></p>
 <p> 或者<br><figure class="highlight shell"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">service nginx restart</div></pre></td></tr></table></figure></p>
 <p>CentOS7需要关闭selinux功能,否则端口转发时会出错<br>编辑selinux文件<br><figure class="highlight shell"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">/etc/sysconfig/selinux</div></pre></td></tr></table></figure></p>
-<p>注释掉下面代码<br><figure class="highlight shell"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="meta">#</span><span class="bash">SELINUX=enforcing</span></div></pre></td></tr></table></figure></p>
+<p>注释掉下面代码<br><figure class="highlight shell"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="meta">#</span>SELINUX=enforcing</div></pre></td></tr></table></figure></p>
 <p>将此行代码取消注释,修改后为:<br><figure class="highlight shell"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">SELINUX=disabled</div></pre></td></tr></table></figure></p>
 <p>设置 SELinux 状态<br><figure class="highlight shell"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">setenforce 0</div></pre></td></tr></table></figure></p>
 <p>执行命令,获取SELinux状态</p>
@@ -1534,7 +1539,7 @@
 
 </div>
 
-    <a data-url="http://yoursite.com/2017/09/18/Node项目CentOS环境搭建简介/" data-id="cjmlhe6g00002votz2lr513m9" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
+    <a data-url="http://yoursite.com/2017/09/18/Node项目CentOS环境搭建简介/" data-id="cjmlhib8j0004kwtzfw8p4gmk" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
 <script>
     (function ($) {
         // Prevent duplicate binding
@@ -1658,7 +1663,7 @@
 
 </div>
 
-    <a data-url="http://yoursite.com/2017/09/18/npm常用命令介绍/" data-id="cjmlhe6gf000gvotzmltzb1hx" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
+    <a data-url="http://yoursite.com/2017/09/18/npm常用命令介绍/" data-id="cjmlhib8x000jkwtzyihqmdbd" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
 <script>
     (function ($) {
         // Prevent duplicate binding
@@ -1827,7 +1832,7 @@
                     <li>
                         
                         <div class="item-thumbnail">
-                            <a href="/2017/11/03/nvm教程/" class="thumbnail">
+                            <a href="/2017/11/03/ubuntu下zookeeper安装/" class="thumbnail">
     
     
         <span class="thumbnail-image thumbnail-none"></span>
@@ -1838,7 +1843,7 @@
                         
                         <div class="item-inner">
                             <p class="item-category"></p>
-                            <p class="item-title"><a href="/2017/11/03/nvm教程/" class="title">nvm教程</a></p>
+                            <p class="item-title"><a href="/2017/11/03/ubuntu下zookeeper安装/" class="title">ubuntu下zookeeper安装</a></p>
                             <p class="item-date"><time datetime="2017-11-03T10:09:16.000Z" itemprop="datePublished">2017-11-03</time></p>
                         </div>
                     </li>
@@ -1863,7 +1868,7 @@
     <div class="widget-wrap">
         <h3 class="widget-title">标签</h3>
         <div class="widget">
-            <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Angular/">Angular</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/CentOS-Node-PM2/">CentOS Node PM2</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/MongoDB/">MongoDB</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Node/">Node</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/PM2/">PM2</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/node/">node</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/nvm/">nvm</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/zookeeper/">zookeeper</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/开发/">开发</a><span class="tag-list-count">1</span></li></ul>
+            <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Angular/">Angular</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/CentOS-Node-PM2/">CentOS Node PM2</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/MongoDB/">MongoDB</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Node/">Node</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/PM2/">PM2</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Spring-boot-logback/">Spring boot, logback</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/node/">node</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/nvm/">nvm</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/zookeeper/">zookeeper</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/开发/">开发</a><span class="tag-list-count">1</span></li></ul>
         </div>
     </div>
 
@@ -1872,7 +1877,7 @@
     <div class="widget-wrap">
         <h3 class="widget-title">标签云</h3>
         <div class="widget tagcloud">
-            <a href="/tags/Angular/" style="font-size: 10px;">Angular</a> <a href="/tags/CentOS-Node-PM2/" style="font-size: 10px;">CentOS Node PM2</a> <a href="/tags/MongoDB/" style="font-size: 10px;">MongoDB</a> <a href="/tags/Node/" style="font-size: 10px;">Node</a> <a href="/tags/PM2/" style="font-size: 10px;">PM2</a> <a href="/tags/node/" style="font-size: 20px;">node</a> <a href="/tags/nvm/" style="font-size: 10px;">nvm</a> <a href="/tags/zookeeper/" style="font-size: 20px;">zookeeper</a> <a href="/tags/开发/" style="font-size: 10px;">开发</a>
+            <a href="/tags/Angular/" style="font-size: 10px;">Angular</a> <a href="/tags/CentOS-Node-PM2/" style="font-size: 10px;">CentOS Node PM2</a> <a href="/tags/MongoDB/" style="font-size: 10px;">MongoDB</a> <a href="/tags/Node/" style="font-size: 10px;">Node</a> <a href="/tags/PM2/" style="font-size: 10px;">PM2</a> <a href="/tags/Spring-boot-logback/" style="font-size: 10px;">Spring boot, logback</a> <a href="/tags/node/" style="font-size: 20px;">node</a> <a href="/tags/nvm/" style="font-size: 10px;">nvm</a> <a href="/tags/zookeeper/" style="font-size: 20px;">zookeeper</a> <a href="/tags/开发/" style="font-size: 10px;">开发</a>
         </div>
     </div>
 
