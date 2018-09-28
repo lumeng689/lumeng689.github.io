@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2017-11-06T03:51:02.161Z</updated>
+  <updated>2018-09-28T04:02:07.238Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -14,6 +14,25 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>logback 配置</title>
+    <link href="http://yoursite.com/2018/09/28/logback-%E9%85%8D%E7%BD%AE/"/>
+    <id>http://yoursite.com/2018/09/28/logback-配置/</id>
+    <published>2018-09-28T04:01:00.000Z</published>
+    <updated>2018-09-28T04:02:07.238Z</updated>
+    
+    <content type="html"><![CDATA[<p>摘抄： <a href="https://juejin.im/post/5a1f86f0f265da4326529c61" target="_blank" rel="external">https://juejin.im/post/5a1f86f0f265da4326529c61</a></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div><div class="line">67</div><div class="line">68</div><div class="line">69</div><div class="line">70</div><div class="line">71</div><div class="line">72</div><div class="line">73</div><div class="line">74</div><div class="line">75</div><div class="line">76</div><div class="line">77</div><div class="line">78</div><div class="line">79</div><div class="line">80</div><div class="line">81</div><div class="line">82</div><div class="line">83</div><div class="line">84</div><div class="line">85</div><div class="line">86</div><div class="line">87</div><div class="line">88</div><div class="line">89</div><div class="line">90</div><div class="line">91</div><div class="line">92</div><div class="line">93</div><div class="line">94</div><div class="line">95</div><div class="line">96</div><div class="line">97</div><div class="line">98</div><div class="line">99</div><div class="line">100</div><div class="line">101</div><div class="line">102</div><div class="line">103</div><div class="line">104</div><div class="line">105</div><div class="line">106</div><div class="line">107</div><div class="line">108</div><div class="line">109</div><div class="line">110</div><div class="line">111</div><div class="line">112</div><div class="line">113</div><div class="line">114</div><div class="line">115</div><div class="line">116</div><div class="line">117</div><div class="line">118</div><div class="line">119</div><div class="line">120</div><div class="line">121</div><div class="line">122</div><div class="line">123</div></pre></td><td class="code"><pre><div class="line">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;</div><div class="line">&lt;configuration&gt;</div><div class="line"></div><div class="line">    &lt;!-- 日志根目录--&gt;</div><div class="line">    &lt;springProperty scope=&quot;context&quot; name=&quot;LOG_HOME&quot; source=&quot;logging.path&quot; defaultValue=&quot;/data/logs/spring-boot-logback&quot;/&gt;</div><div class="line"></div><div class="line">    &lt;!-- 日志级别 --&gt;</div><div class="line">    &lt;springProperty scope=&quot;context&quot; name=&quot;LOG_ROOT_LEVEL&quot; source=&quot;logging.level.root&quot; defaultValue=&quot;DEBUG&quot;/&gt;</div><div class="line"></div><div class="line">    &lt;!--  标识这个&quot;STDOUT&quot; 将会添加到这个logger --&gt;</div><div class="line">    &lt;springProperty scope=&quot;context&quot; name=&quot;STDOUT&quot; source=&quot;log.stdout&quot; defaultValue=&quot;STDOUT&quot;/&gt;</div><div class="line"></div><div class="line">    &lt;!-- 日志文件名称--&gt;</div><div class="line">    &lt;property name=&quot;LOG_PREFIX&quot; value=&quot;spring-boot-logback&quot; /&gt;</div><div class="line"></div><div class="line">    &lt;!-- 日志文件编码--&gt;</div><div class="line">    &lt;property name=&quot;LOG_CHARSET&quot; value=&quot;UTF-8&quot; /&gt;</div><div class="line"></div><div class="line">    &lt;!-- 日志文件路径+日期--&gt;</div><div class="line">    &lt;property name=&quot;LOG_DIR&quot; value=&quot;$&#123;LOG_HOME&#125;/%d&#123;yyyyMMdd&#125;&quot; /&gt;</div><div class="line"></div><div class="line">    &lt;!--对日志进行格式化--&gt;</div><div class="line">    &lt;property name=&quot;LOG_MSG&quot; value=&quot;- | [%X&#123;requestUUID&#125;] | [%d&#123;yyyyMMdd HH:mm:ss.SSS&#125;] | [%level] | [$&#123;HOSTNAME&#125;] | [%thread] | [%logger&#123;36&#125;] | --&gt; %msg|%n &quot;/&gt;</div><div class="line"></div><div class="line">    &lt;!--文件大小，默认10MB--&gt;</div><div class="line">    &lt;property name=&quot;MAX_FILE_SIZE&quot; value=&quot;50MB&quot; /&gt;</div><div class="line"></div><div class="line">    &lt;!-- 配置日志的滚动时间 ，表示只保留最近 10 天的日志--&gt;</div><div class="line">    &lt;property name=&quot;MAX_HISTORY&quot; value=&quot;10&quot;/&gt;</div><div class="line"></div><div class="line">    &lt;!--输出到控制台--&gt;</div><div class="line">    &lt;appender name=&quot;STDOUT&quot; class=&quot;ch.qos.logback.core.ConsoleAppender&quot;&gt;</div><div class="line">        &lt;!-- 输出的日志内容格式化--&gt;</div><div class="line">        &lt;layout class=&quot;ch.qos.logback.classic.PatternLayout&quot;&gt;</div><div class="line">            &lt;pattern&gt;$&#123;LOG_MSG&#125;&lt;/pattern&gt;</div><div class="line">        &lt;/layout&gt;</div><div class="line">    &lt;/appender&gt;</div><div class="line"></div><div class="line">    &lt;!--输出到文件--&gt;</div><div class="line">    &lt;appender name=&quot;0&quot; class=&quot;ch.qos.logback.core.rolling.RollingFileAppender&quot;&gt;</div><div class="line">    &lt;/appender&gt;</div><div class="line"></div><div class="line">    &lt;!-- 定义 ALL 日志的输出方式:--&gt;</div><div class="line">    &lt;appender name=&quot;FILE_ALL&quot; class=&quot;ch.qos.logback.core.rolling.RollingFileAppender&quot;&gt;</div><div class="line">        &lt;!--日志文件路径，日志文件名称--&gt;</div><div class="line">        &lt;File&gt;$&#123;LOG_HOME&#125;/all_$&#123;LOG_PREFIX&#125;.log&lt;/File&gt;</div><div class="line"></div><div class="line">        &lt;!-- 设置滚动策略，当天的日志大小超过 $&#123;MAX_FILE_SIZE&#125; 文件大小时候，新的内容写入新的文件， 默认10MB --&gt;</div><div class="line">        &lt;rollingPolicy class=&quot;ch.qos.logback.core.rolling.TimeBasedRollingPolicy&quot;&gt;</div><div class="line"></div><div class="line">            &lt;!--日志文件路径，新的 ALL 日志文件名称，“ i ” 是个变量 --&gt;</div><div class="line">            &lt;FileNamePattern&gt;$&#123;LOG_DIR&#125;/all_$&#123;LOG_PREFIX&#125;%i.log&lt;/FileNamePattern&gt;</div><div class="line"></div><div class="line">            &lt;!-- 配置日志的滚动时间 ，表示只保留最近 10 天的日志--&gt;</div><div class="line">            &lt;MaxHistory&gt;$&#123;MAX_HISTORY&#125;&lt;/MaxHistory&gt;</div><div class="line"></div><div class="line">            &lt;!--当天的日志大小超过 $&#123;MAX_FILE_SIZE&#125; 文件大小时候，新的内容写入新的文件， 默认10MB--&gt;</div><div class="line">            &lt;timeBasedFileNamingAndTriggeringPolicy class=&quot;ch.qos.logback.core.rolling.SizeAndTimeBasedFNATP&quot;&gt;</div><div class="line">                &lt;maxFileSize&gt;$&#123;MAX_FILE_SIZE&#125;&lt;/maxFileSize&gt;</div><div class="line">            &lt;/timeBasedFileNamingAndTriggeringPolicy&gt;</div><div class="line"></div><div class="line">        &lt;/rollingPolicy&gt;</div><div class="line"></div><div class="line">        &lt;!-- 输出的日志内容格式化--&gt;</div><div class="line">        &lt;layout class=&quot;ch.qos.logback.classic.PatternLayout&quot;&gt;</div><div class="line">            &lt;pattern&gt;$&#123;LOG_MSG&#125;&lt;/pattern&gt;</div><div class="line">        &lt;/layout&gt;</div><div class="line">    &lt;/appender&gt;</div><div class="line"></div><div class="line">    &lt;!-- 定义 ERROR 日志的输出方式:--&gt;</div><div class="line">    &lt;appender name=&quot;FILE_ERROR&quot; class=&quot;ch.qos.logback.core.rolling.RollingFileAppender&quot;&gt;</div><div class="line">        &lt;!-- 下面为配置只输出error级别的日志 --&gt;</div><div class="line">        &lt;filter class=&quot;ch.qos.logback.classic.filter.LevelFilter&quot;&gt;</div><div class="line">            &lt;level&gt;ERROR&lt;/level&gt;</div><div class="line">            &lt;OnMismatch&gt;DENY&lt;/OnMismatch&gt;</div><div class="line">            &lt;OnMatch&gt;ACCEPT&lt;/OnMatch&gt;</div><div class="line">        &lt;/filter&gt;</div><div class="line">        &lt;!--日志文件路径，日志文件名称--&gt;</div><div class="line">        &lt;File&gt;$&#123;LOG_HOME&#125;/err_$&#123;LOG_PREFIX&#125;.log&lt;/File&gt;</div><div class="line"></div><div class="line">        &lt;!-- 设置滚动策略，当天的日志大小超过 $&#123;MAX_FILE_SIZE&#125; 文件大小时候，新的内容写入新的文件， 默认10MB --&gt;</div><div class="line">        &lt;rollingPolicy class=&quot;ch.qos.logback.core.rolling.TimeBasedRollingPolicy&quot;&gt;</div><div class="line"></div><div class="line">            &lt;!--日志文件路径，新的 ERR 日志文件名称，“ i ” 是个变量 --&gt;</div><div class="line">            &lt;FileNamePattern&gt;$&#123;LOG_DIR&#125;/err_$&#123;LOG_PREFIX&#125;%i.log&lt;/FileNamePattern&gt;</div><div class="line"></div><div class="line">            &lt;!-- 配置日志的滚动时间 ，表示只保留最近 10 天的日志--&gt;</div><div class="line">            &lt;MaxHistory&gt;$&#123;MAX_HISTORY&#125;&lt;/MaxHistory&gt;</div><div class="line"></div><div class="line">            &lt;!--当天的日志大小超过 $&#123;MAX_FILE_SIZE&#125; 文件大小时候，新的内容写入新的文件， 默认10MB--&gt;</div><div class="line">            &lt;timeBasedFileNamingAndTriggeringPolicy class=&quot;ch.qos.logback.core.rolling.SizeAndTimeBasedFNATP&quot;&gt;</div><div class="line">                &lt;maxFileSize&gt;$&#123;MAX_FILE_SIZE&#125;&lt;/maxFileSize&gt;</div><div class="line">            &lt;/timeBasedFileNamingAndTriggeringPolicy&gt;</div><div class="line">        &lt;/rollingPolicy&gt;</div><div class="line"></div><div class="line">        &lt;!-- 输出的日志内容格式化--&gt;</div><div class="line">        &lt;layout class=&quot;ch.qos.logback.classic.PatternLayout&quot;&gt;</div><div class="line">            &lt;Pattern&gt;$&#123;LOG_MSG&#125;&lt;/Pattern&gt;</div><div class="line">        &lt;/layout&gt;</div><div class="line">    &lt;/appender&gt;</div><div class="line"></div><div class="line">    &lt;!-- additivity 设为false,则logger内容不附加至root ，配置以配置包下的所有类的日志的打印，级别是 ERROR--&gt;</div><div class="line"></div><div class="line">    &lt;logger name=&quot;org.springframework&quot;     level=&quot;ERROR&quot; /&gt;</div><div class="line">    &lt;logger name=&quot;org.apache.commons&quot;      level=&quot;ERROR&quot; /&gt;</div><div class="line">    &lt;logger name=&quot;org.apache.zookeeper&quot;    level=&quot;ERROR&quot;  /&gt;</div><div class="line">    &lt;logger name=&quot;com.alibaba.dubbo.monitor&quot; level=&quot;ERROR&quot;/&gt;</div><div class="line">    &lt;logger name=&quot;com.alibaba.dubbo.remoting&quot; level=&quot;ERROR&quot; /&gt;</div><div class="line"></div><div class="line">    &lt;!-- $&#123;LOG_ROOT_LEVEL&#125; 日志级别 --&gt;</div><div class="line">    &lt;root level=&quot;$&#123;LOG_ROOT_LEVEL&#125;&quot;&gt;</div><div class="line"></div><div class="line">        &lt;!-- 标识这个&quot;$&#123;STDOUT&#125;&quot;将会添加到这个logger --&gt;</div><div class="line">        &lt;appender-ref ref=&quot;$&#123;STDOUT&#125;&quot;/&gt;</div><div class="line"></div><div class="line">        &lt;!-- FILE_ALL 日志输出添加到 logger --&gt;</div><div class="line">        &lt;appender-ref ref=&quot;FILE_ALL&quot;/&gt;</div><div class="line"></div><div class="line">        &lt;!-- FILE_ERROR 日志输出添加到 logger --&gt;</div><div class="line">        &lt;appender-ref ref=&quot;FILE_ERROR&quot;/&gt;</div><div class="line">    &lt;/root&gt;</div><div class="line"></div><div class="line">&lt;/configuration&gt;</div></pre></td></tr></table></figure>]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;摘抄： &lt;a href=&quot;https://juejin.im/post/5a1f86f0f265da4326529c61&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;https://juejin.im/post/5a1f86f0f265da4326529
+    
+    </summary>
+    
+    
+  </entry>
   
   <entry>
     <title>Ubuntu服务器 node服务器基本配置</title>
@@ -102,7 +121,7 @@
     <link href="http://yoursite.com/2017/11/06/CentOS%E7%8E%AF%E5%A2%83-node%E6%9C%8D%E5%8A%A1%E5%99%A8%E5%9F%BA%E6%9C%AC%E9%85%8D%E7%BD%AE/"/>
     <id>http://yoursite.com/2017/11/06/CentOS环境-node服务器基本配置/</id>
     <published>2017-11-06T03:44:10.000Z</published>
-    <updated>2017-11-06T03:47:29.608Z</updated>
+    <updated>2017-11-07T09:09:22.909Z</updated>
     
     <content type="html"><![CDATA[<h3 id="node环境安装"><a href="#node环境安装" class="headerlink" title="node环境安装"></a>node环境安装</h3><p> 执行以下命令：<br> <figure class="highlight shell"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">curl --silent --location https://rpm.nodesource.com/setup_6.x | bash -</div></pre></td></tr></table></figure></p>
 <p> 然后执行:<br>  <figure class="highlight shell"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">yum -y install nodejs</div></pre></td></tr></table></figure></p>
@@ -124,6 +143,20 @@
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">make MALLOC=libc</div></pre></td></tr></table></figure>
 <p>将编译后的redis-server复制到/usr/bin</p>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">cp src/redis-server /usr/bin/</div></pre></td></tr></table></figure>
+<p>创建配置文件夹和数据文件夹<br><figure class="highlight shell"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">sudo mkdir /etc/redis</div><div class="line">sudo mkdir /var/redis</div></pre></td></tr></table></figure></p>
+<p>将编译目录下的脚本拷贝到init.d文件夹下<br><figure class="highlight shell"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">sudo cp utils/redis_init_script /etc/init.d/redis_6379</div></pre></td></tr></table></figure></p>
+<p>拷贝配置文件<br><figure class="highlight shell"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">sudo cp redis.conf /etc/redis/6379.conf</div></pre></td></tr></table></figure></p>
+<p>为redis创建一个数据和工作目录<br><figure class="highlight shell"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">sudo mkdir /var/redis/6379</div></pre></td></tr></table></figure></p>
+<p>编辑/etc/redis/6379.conf</p>
+<ul>
+<li>把参数 daemonize 设置为 yes (默认是 no).</li>
+<li>设置 pidfile 为 /var/run/redis_6379.pid (可以根据需要改变端口).</li>
+<li>如果有需要可以改变 port 参数. 默认6379.</li>
+<li>设置 loglevel 参数为合适值.</li>
+<li>设置 logfile 为 /var/log/redis_6379.log</li>
+<li>设置 dir 为 /var/redis/6379 (此步骤很重要!)</li>
+</ul>
+<p>启动程序<br><figure class="highlight shell"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">sudo /etc/init.d/redis_6379 start</div></pre></td></tr></table></figure></p>
 ]]></content>
     
     <summary type="html">
@@ -216,31 +249,6 @@
   </entry>
   
   <entry>
-    <title>ubuntu下zookeeper安装</title>
-    <link href="http://yoursite.com/2017/11/03/ubuntu%E4%B8%8Bzookeeper%E5%AE%89%E8%A3%85/"/>
-    <id>http://yoursite.com/2017/11/03/ubuntu下zookeeper安装/</id>
-    <published>2017-11-03T10:09:16.000Z</published>
-    <updated>2017-11-03T10:20:11.964Z</updated>
-    
-    <content type="html"><![CDATA[<p>1.下载zookeeper, 并解压<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">cd</span> /opt</div><div class="line">wget http://mirror.bit.edu.cn/apache/zookeeper/stable/zookeeper-3.4.10.tar.gz</div><div class="line">tar -xvf zookeeper-3.4.10.tar.gz</div></pre></td></tr></table></figure></p>
-<p>2.创建数据文件<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">mkdir -p /data/zookeeper</div></pre></td></tr></table></figure></p>
-<p>3.创建配置文件<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">cd</span> ./conf</div><div class="line">mv zoo_sample.cfg  zoo.cfg</div></pre></td></tr></table></figure></p>
-<p>4.设置数据文件目录, 更改zoo.cfg中配置：dataDir=/data/zookeeper </p>
-<p>5.启动服务<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">cd ./bin</div><div class="line">./zkServer.sh start</div></pre></td></tr></table></figure></p>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;1.下载zookeeper, 并解压&lt;br&gt;&lt;figure class=&quot;highlight bash&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;2&lt;/div
-    
-    </summary>
-    
-    
-      <category term="zookeeper" scheme="http://yoursite.com/tags/zookeeper/"/>
-    
-  </entry>
-  
-  <entry>
     <title>nvm教程</title>
     <link href="http://yoursite.com/2017/11/03/nvm%E6%95%99%E7%A8%8B/"/>
     <id>http://yoursite.com/2017/11/03/nvm教程/</id>
@@ -280,11 +288,36 @@
   </entry>
   
   <entry>
+    <title>ubuntu下zookeeper安装</title>
+    <link href="http://yoursite.com/2017/11/03/ubuntu%E4%B8%8Bzookeeper%E5%AE%89%E8%A3%85/"/>
+    <id>http://yoursite.com/2017/11/03/ubuntu下zookeeper安装/</id>
+    <published>2017-11-03T10:09:16.000Z</published>
+    <updated>2017-11-03T10:20:11.964Z</updated>
+    
+    <content type="html"><![CDATA[<p>1.下载zookeeper, 并解压<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">cd</span> /opt</div><div class="line">wget http://mirror.bit.edu.cn/apache/zookeeper/stable/zookeeper-3.4.10.tar.gz</div><div class="line">tar -xvf zookeeper-3.4.10.tar.gz</div></pre></td></tr></table></figure></p>
+<p>2.创建数据文件<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">mkdir -p /data/zookeeper</div></pre></td></tr></table></figure></p>
+<p>3.创建配置文件<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">cd</span> ./conf</div><div class="line">mv zoo_sample.cfg  zoo.cfg</div></pre></td></tr></table></figure></p>
+<p>4.设置数据文件目录, 更改zoo.cfg中配置：dataDir=/data/zookeeper </p>
+<p>5.启动服务<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">cd ./bin</div><div class="line">./zkServer.sh start</div></pre></td></tr></table></figure></p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;1.下载zookeeper, 并解压&lt;br&gt;&lt;figure class=&quot;highlight bash&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;2&lt;/div
+    
+    </summary>
+    
+    
+      <category term="zookeeper" scheme="http://yoursite.com/tags/zookeeper/"/>
+    
+  </entry>
+  
+  <entry>
     <title>Express项目安全建议</title>
     <link href="http://yoursite.com/2017/09/18/Express%E9%A1%B9%E7%9B%AE%E5%AE%89%E5%85%A8%E5%BB%BA%E8%AE%AE/"/>
     <id>http://yoursite.com/2017/09/18/Express项目安全建议/</id>
     <published>2017-09-18T06:33:17.000Z</published>
-    <updated>2017-09-18T06:33:32.835Z</updated>
+    <updated>2017-09-18T06:33:32.836Z</updated>
     
     <content type="html"><![CDATA[<p>参照文档 <a href="http://expressjs.com/zh-cn/advanced/best-practice-security.html" target="_blank" rel="external">http://expressjs.com/zh-cn/advanced/best-practice-security.html</a></p>
 <ol>
@@ -486,7 +519,7 @@
     <link href="http://yoursite.com/2017/09/18/Node%E9%A1%B9%E7%9B%AE%E5%B8%B8%E7%94%A8%E5%BA%93%E4%BB%8B%E7%BB%8D/"/>
     <id>http://yoursite.com/2017/09/18/Node项目常用库介绍/</id>
     <published>2017-09-18T06:25:57.000Z</published>
-    <updated>2017-09-18T06:26:37.087Z</updated>
+    <updated>2017-09-18T06:26:37.088Z</updated>
     
     <content type="html"><![CDATA[<ol>
 <li><p>nodemon</p>
@@ -542,7 +575,7 @@
     <link href="http://yoursite.com/2017/09/18/angular-cli%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/"/>
     <id>http://yoursite.com/2017/09/18/angular-cli常用命令/</id>
     <published>2017-09-18T06:14:49.000Z</published>
-    <updated>2017-09-18T06:16:21.293Z</updated>
+    <updated>2017-09-18T06:16:21.294Z</updated>
     
     <content type="html"><![CDATA[<h1 id="NG常用命令"><a href="#NG常用命令" class="headerlink" title="NG常用命令"></a>NG常用命令</h1><h1 id="ng-help"><a href="#ng-help" class="headerlink" title="ng help"></a>ng help</h1><p>打印帮助信息</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">ng help</div></pre></td></tr></table></figure>
@@ -616,7 +649,7 @@
     <link href="http://yoursite.com/2017/09/18/MongoDB%E7%9A%84%E5%AF%BC%E5%85%A5%E5%AF%BC%E5%87%BA/"/>
     <id>http://yoursite.com/2017/09/18/MongoDB的导入导出/</id>
     <published>2017-09-18T03:34:06.000Z</published>
-    <updated>2017-09-18T06:18:54.887Z</updated>
+    <updated>2017-09-18T06:18:54.888Z</updated>
     
     <content type="html"><![CDATA[<p>MongoDB的导入导出分为 文本导出 和 二进制导出，文本导出一次导出一个集合，方便与其他数据库交换数据，<br>二进制导出的是MongoDB自己的格式，可以导出整个数据库，体积小，速度快。</p>
 <h1 id="文本导出"><a href="#文本导出" class="headerlink" title="文本导出"></a>文本导出</h1><h2 id="mongoexport-导出表"><a href="#mongoexport-导出表" class="headerlink" title="mongoexport 导出表"></a>mongoexport 导出表</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">-h, --host=&lt;hostname&gt;              主机</div><div class="line">   --port=&lt;port&gt;                   端口</div><div class="line">-u, --username=&lt;username&gt;          用户名</div><div class="line">-p, --password=&lt;passwd&gt;            密码</div><div class="line">-d, --db=&lt;database-name&gt;           数据库名称</div><div class="line">-c, --collection=&lt;collection-name&gt; 集合名称</div><div class="line">-f, --fields=&lt;field&gt;[,&lt;field&gt;]*    逗号分隔的字段名称</div><div class="line">    --<span class="built_in">type</span>=&lt;<span class="built_in">type</span>&gt;                  json或者csv，默认json</div><div class="line">--<span class="built_in">type</span>=&lt;<span class="built_in">type</span>&gt;</div><div class="line">-o, --out=&lt;filename&gt;               导出文件名称</div></pre></td></tr></table></figure>
@@ -647,7 +680,7 @@
     <link href="http://yoursite.com/2017/09/06/PM2-%E9%9A%8F%E7%B3%BB%E7%BB%9F%E5%90%AF%E5%8A%A8%E9%85%8D%E7%BD%AE/"/>
     <id>http://yoursite.com/2017/09/06/PM2-随系统启动配置/</id>
     <published>2017-09-06T10:09:16.000Z</published>
-    <updated>2017-09-06T10:10:05.812Z</updated>
+    <updated>2017-09-06T10:10:05.813Z</updated>
     
     <content type="html"><![CDATA[<ol>
 <li><p>自动配置启动脚本</p>
@@ -681,7 +714,7 @@
     <title>解决端口占用问题</title>
     <link href="http://yoursite.com/2017/09/06/%E8%A7%A3%E5%86%B3%E7%AB%AF%E5%8F%A3%E5%8D%A0%E7%94%A8%E9%97%AE%E9%A2%98/"/>
     <id>http://yoursite.com/2017/09/06/解决端口占用问题/</id>
-    <published>2017-09-06T09:36:39.257Z</published>
+    <published>2017-09-06T09:36:39.258Z</published>
     <updated>2017-09-18T06:15:59.115Z</updated>
     
     <content type="html"><![CDATA[<p>日常开发中经常会遇到端口占用的问题，以下简单记录下解决方案。</p>
